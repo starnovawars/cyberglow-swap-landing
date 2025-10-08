@@ -1,190 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberglow Swap | $CGT</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: "Poppins", sans-serif;
-        background: radial-gradient(circle at top, #0a0f1f, #000814);
-        color: #e5eaf2;
-        overflow-x: hidden;
-      }
-      canvas#particles {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: 0;
-      }
-      header {
-        text-align: center;
-        padding: 60px 20px 40px;
-        position: relative;
-        z-index: 1;
-      }
-      header img {
-        width: 140px;
-        animation: float 6s ease-in-out infinite, fadeIn 3s ease;
-        filter: drop-shadow(0 0 10px #00d8ff);
-      }
-      h1 {
-        color: #00d8ff;
-        font-size: 2.6rem;
-        margin-top: 20px;
-        text-shadow: 0 0 15px #00d8ff;
-      }
-      p {
-        max-width: 700px;
-        margin: 10px auto;
-        opacity: 0.9;
-        font-size: 1.1rem;
-      }
-      section {
-        text-align: center;
-        padding: 80px 20px;
-        position: relative;
-        z-index: 1;
-      }
-      .btn {
-        display: inline-block;
-        background: #00d8ff;
-        color: #000814;
-        padding: 14px 30px;
-        border-radius: 8px;
-        text-decoration: none;
-        font-weight: bold;
-        transition: all 0.3s ease;
-        box-shadow: 0 0 15px #00d8ff;
-      }
-      .btn:hover {
-        background: #009ec7;
-        box-shadow: 0 0 25px #00d8ff;
-      }
-      .tokenomics {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 20px;
-      }
-      .tokenomics canvas {
-        max-width: 300px;
-      }
-      footer {
-        text-align: center;
-        padding: 40px;
-        opacity: 0.8;
-        font-size: 0.9rem;
-      }
+import React from "react";
+import "./index.css";
 
-      @keyframes float {
-        0%, 100% { transform: translateY(0); }
-        50% { transform: translateY(-12px); }
-      }
-      @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-      }
-    </style>
-  </head>
-  <body>
-    <canvas id="particles"></canvas>
+export default function App() {
+  return (
+    <div
+      style={{
+        height: "100vh",
+        display: "flex",
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        background: "radial-gradient(circle at 50% 20%, #0A0F1F, #010513 80%)",
+        overflow: "hidden",
+        textAlign: "center",
+        color: "#00D8FF",
+        fontFamily: "Poppins, sans-serif",
+      }}
+    >
+      {/* Fondo animado de partículas tipo neón */}
+      <div
+        style={{
+          position: "absolute",
+          width: "100%",
+          height: "100%",
+          background:
+            "radial-gradient(circle at 50% 50%, rgba(0, 216, 255, 0.15), transparent 70%)",
+          animation: "pulse 3s infinite alternate",
+          zIndex: 0,
+        }}
+      ></div>
 
-    <header>
-      <img src="cyberglow-logo.png" alt="Cyberglow Logo" />
-      <h1>Cyberglow Swap</h1>
-      <p>DeFi Infrastructure on IOTA Rebased EVM — Powering the Future of Decentralized Finance ⚡</p>
-      <a href="https://starnovawars.github.io/cyberglow-swap/" class="btn">🚀 Launch App</a>
-    </header>
+      {/* Logo flotante con brillo neón */}
+      <img
+        src="/cyberglow-logo.png"
+        alt="Cyberglow Logo"
+        style={{
+          width: "200px",
+          filter:
+            "drop-shadow(0 0 12px #00D8FF) drop-shadow(0 0 24px #00D8FF)",
+          animation: "float 5s ease-in-out infinite, glow 2s infinite alternate",
+          zIndex: 1,
+        }}
+      />
 
-    <section id="about">
-      <h2>💎 About Cyberglow</h2>
-      <p>
-        Cyberglow Swap is a decentralized exchange and liquidity protocol built on the IOTA Rebased EVM.
-        Our mission is to make DeFi accessible, fast, and sustainable for the IOTA ecosystem and beyond.
+      <h1
+        style={{
+          fontSize: "2.8rem",
+          marginTop: "20px",
+          textShadow: "0 0 18px #00D8FF",
+          letterSpacing: "2px",
+          zIndex: 1,
+        }}
+      >
+        Cyberglow Swap
+      </h1>
+
+      <p
+        style={{
+          marginTop: "10px",
+          fontSize: "1.2rem",
+          opacity: 0.85,
+          zIndex: 1,
+        }}
+      >
+        ⚡ DEX descentralizado en IOTA EVM ⚡
       </p>
-    </section>
-
-    <section id="tokenomics">
-      <h2>💰 $CGT Tokenomics</h2>
-      <div class="tokenomics">
-        <canvas id="chart"></canvas>
-      </div>
-    </section>
-
-    <section id="roadmap">
-      <h2>🛰️ Roadmap</h2>
-      <p>Phase 1 – Launch on IOTA EVM | Phase 2 – Staking & Pools | Phase 3 – Bridge Integration | Phase 4 – Governance</p>
-    </section>
-
-    <section id="community">
-      <h2>👥 Join the Community</h2>
-      <p>
-        <a href="https://x.com/Cyberglowswap" class="btn">X (Twitter)</a>
-        <a href="https://t.me/cyberglowswap" class="btn">Telegram</a>
-        <a href="https://medium.com/@Cyberglowdex/cyberglow-swap-defi-infrastructure-under-construction-on-iota-rebased-evm-a7c3d425efdc" class="btn">Medium</a>
-        <a href="https://x.com/Jarrs899" class="btn">Founder</a>
-      </p>
-    </section>
-
-    <footer>
-      © 2025 Cyberglow Labs — Built on IOTA Rebased EVM | $CGT
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-      // Simple Tokenomics chart
-      const ctx = document.getElementById('chart');
-      new Chart(ctx, {
-        type: 'doughnut',
-        data: {
-          labels: ['Liquidity', 'Staking', 'Team', 'Marketing', 'Community'],
-          datasets: [{
-            data: [40, 20, 15, 10, 15],
-            backgroundColor: ['#00d8ff', '#00aaff', '#0077b6', '#0096c7', '#00b4d8'],
-            borderWidth: 0
-          }]
-        },
-        options: {
-          plugins: { legend: { labels: { color: '#e5eaf2' } } }
-        }
-      });
-
-      // Neon particles background
-      const c = document.getElementById("particles");
-      const ctx2 = c.getContext("2d");
-      c.width = innerWidth;
-      c.height = innerHeight;
-      let particles = [];
-      for (let i = 0; i < 80; i++) {
-        particles.push({
-          x: Math.random() * c.width,
-          y: Math.random() * c.height,
-          r: Math.random() * 2,
-          dx: (Math.random() - 0.5) * 0.5,
-          dy: (Math.random() - 0.5) * 0.5
-        });
-      }
-      function animate() {
-        ctx2.clearRect(0, 0, c.width, c.height);
-        particles.forEach(p => {
-          ctx2.beginPath();
-          ctx2.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx2.fillStyle = "#00d8ff";
-          ctx2.shadowBlur = 12;
-          ctx2.shadowColor = "#00d8ff";
-          ctx2.fill();
-          p.x += p.dx;
-          p.y += p.dy;
-          if (p.x < 0 || p.x > c.width) p.dx *= -1;
-          if (p.y < 0 || p.y > c.height) p.dy *= -1;
-        });
-        requestAnimationFrame(animate);
-      }
-      animate();
-    </script>
-  </body>
-</html>
+    </div>
+  );
+}
