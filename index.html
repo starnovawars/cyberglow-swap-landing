@@ -1,102 +1,175 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberglow Swap</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberglow Swap – DEX on IOTA EVM</title>
+  <link rel="icon" type="image/png" href="cyberglow-logo.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
-    <!-- Enlazar CSS -->
-    <link rel="stylesheet" href="index.css" />
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Poppins", sans-serif;
+      background: radial-gradient(circle at center, #020617 0%, #000010 100%);
+      overflow: hidden;
+      color: #ffffff;
+      text-align: center;
+    }
 
-    <!-- Fuente futurista -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+    /* Background Particles */
+    canvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+    }
 
-  <body>
-    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
-      <!-- Logo con animación -->
-      <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+    /* Logo animation */
+    .logo {
+      width: 160px;
+      margin-top: 80px;
+      animation: float 3s ease-in-out infinite, glow 2s alternate infinite;
+      filter: drop-shadow(0 0 25px #00d8ff);
+    }
 
-      <!-- Título -->
-      <h1
-        style="
-          color: #00d8ff;
-          font-size: 2.5rem;
-          margin-top: 20px;
-          text-shadow: 0 0 20px #00d8ff;
-        "
-      >
-        Cyberglow Swap
-      </h1>
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
 
-      <!-- Subtítulo -->
-      <p
-        style="
-          color: #e0f7ff;
-          font-size: 1.2rem;
-          opacity: 0.9;
-          text-shadow: 0 0 10px #00ffff;
-        "
-      >
-        ⚡ DEX descentralizado en IOTA EVM ⚡
-      </p>
+    @keyframes glow {
+      0% { filter: drop-shadow(0 0 12px #00d8ff); }
+      100% { filter: drop-shadow(0 0 24px #00ffff); }
+    }
 
-      <!-- Botón para abrir el DEX -->
-      <a
-        href="https://starnovawars.github.io/cyberglow-swap/"
-        target="_blank"
-        style="
-          background-color: #00d8ff;
-          color: #000010;
-          padding: 12px 28px;
-          margin-top: 30px;
-          border-radius: 8px;
-          text-decoration: none;
-          font-weight: bold;
-          box-shadow: 0 0 20px #00ffff;
-          transition: all 0.3s ease;
-        "
-        onmouseover="this.style.boxShadow='0 0 40px #00ffff'; this.style.transform='scale(1.05)'"
-        onmouseout="this.style.boxShadow='0 0 20px #00ffff'; this.style.transform='scale(1)'"
-      >
-        🚀 Launch App
-      </a>
-    </div>
+    h1 {
+      font-size: 2.8rem;
+      color: #00d8ff;
+      text-shadow: 0 0 15px #00d8ff;
+      margin-bottom: 10px;
+    }
 
-    <!-- Fondo animado con partículas -->
-    <canvas id="stars"></canvas>
+    p {
+      font-size: 1.1rem;
+      color: #c9d1d9;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      opacity: 0.9;
+    }
 
-    <script>
-      const canvas = document.getElementById('stars');
-      const ctx = canvas.getContext('2d');
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 14px 36px;
+      border-radius: 40px;
+      background: linear-gradient(90deg, #00d8ff, #00ffff);
+      color: #000;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 0 25px rgba(0, 216, 255, 0.6);
+    }
+
+    .btn:hover {
+      transform: scale(1.07);
+      box-shadow: 0 0 35px rgba(0, 255, 255, 0.9);
+    }
+
+    .socials {
+      margin-top: 50px;
+    }
+
+    .socials a {
+      margin: 0 12px;
+      color: #00d8ff;
+      font-size: 1.6rem;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #00ffff;
+      text-shadow: 0 0 12px #00ffff;
+    }
+
+    footer {
+      margin-top: 60px;
+      font-size: 0.9rem;
+      opacity: 0.6;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="particles"></canvas>
+
+  <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+
+  <h1>Cyberglow Swap</h1>
+  <p>
+    The next-generation decentralized exchange built on <strong>IOTA EVM</strong>.<br>
+    Cyberglow Swap connects liquidity, staking, and yield farming through a secure and innovative DeFi infrastructure.<br>
+    Experience seamless trading with low fees, lightning-fast transactions, and cross-chain compatibility.
+  </p>
+
+  <a href="https://starnovawars.github.io/cyberglow-swap/" class="btn">🚀 Launch App</a>
+
+  <div class="socials">
+    <a href="https://x.com/Cyberglowswap" target="_blank">🐦</a>
+    <a href="https://t.me/cyberglowswap" target="_blank">💬</a>
+    <a href="https://medium.com/@Cyberglowdex" target="_blank">📰</a>
+    <a href="https://x.com/Jarrs899" target="_blank">👤</a>
+  </div>
+
+  <footer>© 2025 Cyberglow Swap – Built on IOTA EVM</footer>
+
+  <script>
+    // Simple particle background animation
+    const canvas = document.getElementById("particles");
+    const ctx = canvas.getContext("2d");
+    let particles = [];
+
+    function resize() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resize);
+    resize();
 
-      const stars = Array.from({ length: 100 }, () => ({
+    for (let i = 0; i < 70; i++) {
+      particles.push({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        speed: Math.random() * 0.5,
-      }));
+        r: Math.random() * 2,
+        d: Math.random() * 0.5
+      });
+    }
 
-      function animateStars() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        stars.forEach((star) => {
-          ctx.beginPath();
-          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-          ctx.fillStyle = '#00d8ff';
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = '#00ffff';
-          ctx.fill();
-          star.y += star.speed;
-          if (star.y > canvas.height) star.y = 0;
-        });
-        requestAnimationFrame(animateStars);
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#00d8ff";
+      for (let p of particles) {
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fill();
       }
-      animateStars();
-    </script>
-  </body>
+      update();
+    }
+
+    function update() {
+      for (let p of particles) {
+        p.y += p.d;
+        if (p.y > canvas.height) p.y = 0;
+      }
+    }
+
+    function loop() {
+      draw();
+      requestAnimationFrame(loop);
+    }
+    loop();
+  </script>
+</body>
 </html>
