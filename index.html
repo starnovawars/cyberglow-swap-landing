@@ -1,70 +1,102 @@
-import React from "react";
-import "./index.css";
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberglow Swap</title>
 
-export default function App() {
-  return (
-    <div
-      style={{
-        height: "100vh",
-        display: "flex",
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        background: "radial-gradient(circle at 50% 20%, #0A0F1F, #010513 80%)",
-        overflow: "hidden",
-        textAlign: "center",
-        color: "#00D8FF",
-        fontFamily: "Poppins, sans-serif",
-      }}
-    >
-      {/* Fondo animado de partículas tipo neón */}
-      <div
-        style={{
-          position: "absolute",
-          width: "100%",
-          height: "100%",
-          background:
-            "radial-gradient(circle at 50% 50%, rgba(0, 216, 255, 0.15), transparent 70%)",
-          animation: "pulse 3s infinite alternate",
-          zIndex: 0,
-        }}
-      ></div>
+    <!-- Enlazar CSS -->
+    <link rel="stylesheet" href="index.css" />
 
-      {/* Logo flotante con brillo neón */}
-      <img
-        src="/cyberglow-logo.png"
-        alt="Cyberglow Logo"
-        style={{
-          width: "200px",
-          filter:
-            "drop-shadow(0 0 12px #00D8FF) drop-shadow(0 0 24px #00D8FF)",
-          animation: "float 5s ease-in-out infinite, glow 2s infinite alternate",
-          zIndex: 1,
-        }}
-      />
+    <!-- Fuente futurista -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
+  <body>
+    <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh;">
+      <!-- Logo con animación -->
+      <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+
+      <!-- Título -->
       <h1
-        style={{
-          fontSize: "2.8rem",
-          marginTop: "20px",
-          textShadow: "0 0 18px #00D8FF",
-          letterSpacing: "2px",
-          zIndex: 1,
-        }}
+        style="
+          color: #00d8ff;
+          font-size: 2.5rem;
+          margin-top: 20px;
+          text-shadow: 0 0 20px #00d8ff;
+        "
       >
         Cyberglow Swap
       </h1>
 
+      <!-- Subtítulo -->
       <p
-        style={{
-          marginTop: "10px",
-          fontSize: "1.2rem",
-          opacity: 0.85,
-          zIndex: 1,
-        }}
+        style="
+          color: #e0f7ff;
+          font-size: 1.2rem;
+          opacity: 0.9;
+          text-shadow: 0 0 10px #00ffff;
+        "
       >
         ⚡ DEX descentralizado en IOTA EVM ⚡
       </p>
+
+      <!-- Botón para abrir el DEX -->
+      <a
+        href="https://starnovawars.github.io/cyberglow-swap/"
+        target="_blank"
+        style="
+          background-color: #00d8ff;
+          color: #000010;
+          padding: 12px 28px;
+          margin-top: 30px;
+          border-radius: 8px;
+          text-decoration: none;
+          font-weight: bold;
+          box-shadow: 0 0 20px #00ffff;
+          transition: all 0.3s ease;
+        "
+        onmouseover="this.style.boxShadow='0 0 40px #00ffff'; this.style.transform='scale(1.05)'"
+        onmouseout="this.style.boxShadow='0 0 20px #00ffff'; this.style.transform='scale(1)'"
+      >
+        🚀 Launch App
+      </a>
     </div>
-  );
-}
+
+    <!-- Fondo animado con partículas -->
+    <canvas id="stars"></canvas>
+
+    <script>
+      const canvas = document.getElementById('stars');
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const stars = Array.from({ length: 100 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        size: Math.random() * 2,
+        speed: Math.random() * 0.5,
+      }));
+
+      function animateStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        stars.forEach((star) => {
+          ctx.beginPath();
+          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+          ctx.fillStyle = '#00d8ff';
+          ctx.shadowBlur = 10;
+          ctx.shadowColor = '#00ffff';
+          ctx.fill();
+          star.y += star.speed;
+          if (star.y > canvas.height) star.y = 0;
+        });
+        requestAnimationFrame(animateStars);
+      }
+      animateStars();
+    </script>
+  </body>
+</html>
