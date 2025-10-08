@@ -1,10 +1,10 @@
-/* Animaciones flotantes y efecto de brillo */
+/* --- Animaciones del logo --- */
 @keyframes float {
   0% {
     transform: translateY(0px);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-15px);
   }
   100% {
     transform: translateY(0px);
@@ -13,34 +13,28 @@
 
 @keyframes glow {
   0% {
-    filter: drop-shadow(0 0 8px #00d8ff) drop-shadow(0 0 16px #00d8ff);
+    filter: drop-shadow(0 0 15px #00d8ff) drop-shadow(0 0 30px #00d8ff);
   }
   100% {
-    filter: drop-shadow(0 0 18px #00ffff) drop-shadow(0 0 32px #00ffff);
+    filter: drop-shadow(0 0 25px #00ffff) drop-shadow(0 0 45px #00ffff);
   }
 }
 
-@keyframes pulse {
-  0% {
-    opacity: 0.3;
-  }
-  100% {
-    opacity: 0.6;
-  }
-}
-
+/* --- Estilo del logo principal --- */
 .logo {
-  animation: float 4s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
-  width: 180px;
-  height: auto;
-  filter: drop-shadow(0 0 10px #00ffff);
+  width: 320px; /* tamaño grande centrado */
+  animation: float 5s ease-in-out infinite, glow 2s alternate infinite;
+  transition: transform 0.3s ease;
 }
 
+.logo:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 35px #00ffff) drop-shadow(0 0 70px #00ffff);
+}
+
+/* --- Efecto general para fondo oscuro --- */
 body {
-  background: radial-gradient(ellipse at center, #000010 0%, #000018 100%);
-  color: #fff;
-  font-family: 'Orbitron', sans-serif;
-  text-align: center;
-  overflow-x: hidden;
   margin: 0;
+  overflow: hidden;
+  background: radial-gradient(circle at 50% 20%, #0a1124 0%, #050914 100%);
 }
