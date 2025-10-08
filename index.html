@@ -3,226 +3,188 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberglow Swap Landing Page | $CGT</title>
-
+    <title>Cyberglow Swap | $CGT</title>
     <style>
-      /* Basic reset + fonts */
-      @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-      html,body { height:100%; margin:0; padding:0; }
       body {
         margin: 0;
+        font-family: "Poppins", sans-serif;
+        background: radial-gradient(circle at top, #0a0f1f, #000814);
+        color: #e5eaf2;
         overflow-x: hidden;
-        font-family: 'Poppins', sans-serif;
-        color: #cfeffc;
-        background: radial-gradient(circle at 20% 20%, #0a0f1f, #010613);
       }
-
-      /* Canvas background (stars) */
-      canvas#stars { position: fixed; inset: 0; z-index: 0; }
-
-      /* Page container */
-      .content {
+      canvas#particles {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+      header {
+        text-align: center;
+        padding: 60px 20px 40px;
         position: relative;
-        z-index: 2;
-        min-height: 100vh;
-        display:flex;
-        flex-direction:column;
-        align-items:center;
-        justify-content:center;
-        text-align:center;
-        padding: 40px 20px;
+        z-index: 1;
       }
-
-      /* Hero */
-      .logo { width:140px; filter: drop-shadow(0 0 18px #00D8FF); margin-bottom:12px; }
-      .title-img { width:340px; max-width:80vw; filter: drop-shadow(0 0 12px #00D8FF); margin-bottom:8px; }
-      h1.hero { font-size:2.6rem; color:#00D8FF; margin:6px 0; text-shadow:0 0 12px rgba(0,216,255,0.12); }
-      p.lead { margin:6px 0 18px 0; color:rgba(207,239,252,0.9); max-width:900px; }
-
-      /* Button */
+      header img {
+        width: 140px;
+        animation: float 6s ease-in-out infinite, fadeIn 3s ease;
+        filter: drop-shadow(0 0 10px #00d8ff);
+      }
+      h1 {
+        color: #00d8ff;
+        font-size: 2.6rem;
+        margin-top: 20px;
+        text-shadow: 0 0 15px #00d8ff;
+      }
+      p {
+        max-width: 700px;
+        margin: 10px auto;
+        opacity: 0.9;
+        font-size: 1.1rem;
+      }
+      section {
+        text-align: center;
+        padding: 80px 20px;
+        position: relative;
+        z-index: 1;
+      }
       .btn {
-        margin-top: 12px;
-        padding: 12px 28px;
-        background: transparent;
-        border: 2px solid #00D8FF;
-        color: #00D8FF;
-        border-radius: 999px;
-        cursor: pointer;
-        transition: all .25s ease;
-        box-shadow: 0 6px 20px rgba(0,216,255,0.06);
+        display: inline-block;
+        background: #00d8ff;
+        color: #000814;
+        padding: 14px 30px;
+        border-radius: 8px;
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 0.3s ease;
+        box-shadow: 0 0 15px #00d8ff;
       }
       .btn:hover {
-        background:#00D8FF; color:#071020;
-        transform: translateY(-3px) scale(1.02);
-        box-shadow: 0 12px 30px rgba(0,216,255,0.16);
+        background: #009ec7;
+        box-shadow: 0 0 25px #00d8ff;
+      }
+      .tokenomics {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .tokenomics canvas {
+        max-width: 300px;
+      }
+      footer {
+        text-align: center;
+        padding: 40px;
+        opacity: 0.8;
+        font-size: 0.9rem;
       }
 
-      /* Sections */
-      section { padding:80px 20px; max-width:1060px; margin: 0 auto; position:relative; z-index:2; }
-      .section-title { color:#00D8FF; font-size:1.6rem; margin-bottom:12px; text-shadow:0 0 8px rgba(0,216,255,0.08); }
-      .cards { display:flex; gap:18px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
-
-      .card {
-        min-width:220px;
-        max-width:280px;
-        background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
-        border: 1px solid rgba(0,216,255,0.06);
-        padding:18px;
-        border-radius:12px;
-        color:#cfeffc;
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-12px); }
       }
-
-      /* Tokenomics grid */
-      .token-grid { display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:20px; }
-
-      /* Roadmap */
-      #timeline { display:flex; flex-direction:column; gap:14px; align-items:center; margin-top:18px; }
-      .milestone { padding:12px 18px; border-radius:10px; border:1px solid rgba(0,216,255,0.06); background: rgba(255,255,255,0.01); width:100%; max-width:760px; transition:all .25s ease; }
-      .milestone:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(0,216,255,0.06); }
-
-      /* Footer */
-      footer { text-align:center; padding:28px 14px; color:rgba(207,239,252,0.7); }
-
-      /* small responsive tweaks */
-      @media (max-width:640px) {
-        h1.hero { font-size:1.8rem; }
-        .title-img { width:260px; }
-        .logo { width:110px; }
+      @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
       }
     </style>
   </head>
-
   <body>
-    <!-- Stars canvas -->
-    <canvas id="stars"></canvas>
+    <canvas id="particles"></canvas>
 
-    <!-- HERO -->
-    <div class="content">
-      <!-- Logo: si tienes imagen, la muestra; si no, se muestra título -->
-      <!-- Asegúrate de subir cyberglow-logo.png y cyberglow-title.png en la raíz del repo -->
-      <img src="/cyberglow-logo.png" alt="Cyberglow Logo" class="logo" onerror="this.style.display='none'"/>
-      <img src="/cyberglow-title.png" alt="Cyberglow Title" class="title-img" onerror="this.style.display='none'"/>
-      <h1 class="hero">Cyberglow Swap — decentralized trading on IOTA EVM</h1>
-      <p class="lead">Fast, feeless swaps and community governance powered by $CGT. Connect your wallet and swap tokens in seconds.</p>
+    <header>
+      <img src="cyberglow-logo.png" alt="Cyberglow Logo" />
+      <h1>Cyberglow Swap</h1>
+      <p>DeFi Infrastructure on IOTA Rebased EVM — Powering the Future of Decentralized Finance ⚡</p>
+      <a href="https://starnovawars.github.io/cyberglow-swap/" class="btn">🚀 Launch App</a>
+    </header>
 
-      <!-- ENTER / CONNECT BUTTON -->
-      <div>
-        <!-- Opens DEX in a new tab (replace URL if your DEX is elsewhere) -->
-        <button id="enterApp" class="btn" onclick="window.open('https://starnovawars.github.io/cyberglow-swap/','_blank')">🚀 Enter App</button>
-        <!-- (optional) a connect wallet button for the landing can be added later -->
-      </div>
-    </div>
-
-    <!-- ABOUT -->
     <section id="about">
-      <h2 class="section-title">About Cyberglow</h2>
-      <p style="color:#bfefff; max-width:900px; margin:auto;">
-        Cyberglow Swap ($CGT) is a next-generation decentralized exchange built on IOTA EVM.
-        Our mission is to provide fast, low-cost token swaps, community-governed liquidity incentives,
-        and a secure DeFi hub for builders and users.
+      <h2>💎 About Cyberglow</h2>
+      <p>
+        Cyberglow Swap is a decentralized exchange and liquidity protocol built on the IOTA Rebased EVM.
+        Our mission is to make DeFi accessible, fast, and sustainable for the IOTA ecosystem and beyond.
       </p>
     </section>
 
-    <!-- FEATURES -->
-    <section id="features">
-      <h2 class="section-title">Features</h2>
-      <div class="cards">
-        <div class="card"><strong>Swap</strong><div style="opacity:0.9; margin-top:8px">Instant token swaps with low fees</div></div>
-        <div class="card"><strong>Pool</strong><div style="opacity:0.9; margin-top:8px">Create and provide liquidity</div></div>
-        <div class="card"><strong>Earn</strong><div style="opacity:0.9; margin-top:8px">Yield farming & liquidity rewards</div></div>
-        <div class="card"><strong>Bridge</strong><div style="opacity:0.9; margin-top:8px">Cross-chain interoperability (roadmap)</div></div>
-        <div class="card"><strong>Staking</strong><div style="opacity:0.9; margin-top:8px">Stake $CGT for rewards & governance</div></div>
-      </div>
-    </section>
-
-    <!-- TOKENOMICS -->
     <section id="tokenomics">
-      <h2 class="section-title">Tokenomics — $CGT</h2>
-      <p style="color:#bfefff;">Total Supply: <strong>100,000,000 CGT</strong></p>
-      <div class="token-grid">
-        <div class="card"><h3 style="color:#00D8FF">40% Community</h3><p style="color:#cfeffc">40,000,000 CGT — airdrops & rewards</p></div>
-        <div class="card"><h3 style="color:#00D8FF">20% Liquidity</h3><p style="color:#cfeffc">20,000,000 CGT — DEX liquidity</p></div>
-        <div class="card"><h3 style="color:#00D8FF">15% Team</h3><p style="color:#cfeffc">15,000,000 CGT — vesting 4y (6m cliff)</p></div>
-        <div class="card"><h3 style="color:#00D8FF">10% Treasury</h3><p style="color:#cfeffc">10,000,000 CGT — DAO & partnerships</p></div>
-        <div class="card"><h3 style="color:#00D8FF">10% Staking</h3><p style="color:#cfeffc">10,000,000 CGT — rewards</p></div>
-        <div class="card"><h3 style="color:#00D8FF">5% Marketing</h3><p style="color:#cfeffc">5,000,000 CGT — campaigns</p></div>
+      <h2>💰 $CGT Tokenomics</h2>
+      <div class="tokenomics">
+        <canvas id="chart"></canvas>
       </div>
     </section>
 
-    <!-- ROADMAP -->
-    <section id="roadmap" style="background:linear-gradient(180deg, rgba(0,216,255,0.01), transparent);">
-      <h2 class="section-title">Roadmap</h2>
-      <div id="timeline">
-        <div class="milestone" data-detail="Deploy v1 on IOTA EVM, basic swap & pools"><strong>Q4 2025</strong> — Launch DEX (v1)</div>
-        <div class="milestone" data-detail="Token launch, liquidity mining & airdrops"><strong>Q1 2026</strong> — Token Launch & Liquidity Mining</div>
-        <div class="milestone" data-detail="Staking contracts and governance modules"><strong>Q2 2026</strong> — Staking & Governance</div>
-        <div class="milestone" data-detail="Bridge for cross-chain transfers"><strong>Q3 2026</strong> — Bridge & Cross-chain</div>
-        <div class="milestone" data-detail="Mobile app & analytics dashboard"><strong>Q4 2026</strong> — Mobile & Analytics</div>
-        <div class="milestone" data-detail="Launchpad, grants and ecosystem expansion"><strong>2027</strong> — Ecosystem Growth</div>
-      </div>
-      <div id="milestoneDetail" style="margin-top:14px; color:#cfeffc; min-height:32px;"></div>
+    <section id="roadmap">
+      <h2>🛰️ Roadmap</h2>
+      <p>Phase 1 – Launch on IOTA EVM | Phase 2 – Staking & Pools | Phase 3 – Bridge Integration | Phase 4 – Governance</p>
     </section>
 
-    <!-- COMMUNITY -->
     <section id="community">
-      <h2 class="section-title">Community</h2>
-      <div style="display:flex; gap:12px; justify-content:center; margin-top:14px;">
-        <a href="https://x.com/Jarrs899" target="_blank" style="color:#00D8FF">X (Twitter)</a>
-        <a href="https://t.me/cyberglowswap" target="_blank" style="color:#00D8FF">Telegram</a>
-        <a href="https://tr.ee/VQx_0xyr7r" target="_blank" style="color:#00D8FF">Medium</a>
-        <a href="https://x.com/XJarrs90" target="_blank" style="color:#00D8FF">Founder</a>
-      </div>
+      <h2>👥 Join the Community</h2>
+      <p>
+        <a href="https://x.com/Cyberglowswap" class="btn">X (Twitter)</a>
+        <a href="https://t.me/cyberglowswap" class="btn">Telegram</a>
+        <a href="https://medium.com/@Cyberglowdex/cyberglow-swap-defi-infrastructure-under-construction-on-iota-rebased-evm-a7c3d425efdc" class="btn">Medium</a>
+        <a href="https://x.com/Jarrs899" class="btn">Founder</a>
+      </p>
     </section>
 
     <footer>
-      © 2025 Cyberglow Swap — Powered by IOTA EVM • <a href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" style="color:#00d8ff">Open DEX</a>
+      © 2025 Cyberglow Labs — Built on IOTA Rebased EVM | $CGT
     </footer>
 
-    <!-- JS: stars + timeline interactivity -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <script>
-      /* ---------- STARS CANVAS ---------- */
-      const canvas = document.getElementById('stars');
-      const ctx = canvas.getContext('2d');
-      let stars = [];
-      const num = Math.floor(window.innerWidth / 8); // responsive star count
-      function resize(){
-        canvas.width = innerWidth;
-        canvas.height = innerHeight;
-      }
-      window.addEventListener('resize', resize);
-      resize();
-      for(let i=0;i<num;i++){
-        stars.push({ x:Math.random()*canvas.width, y:Math.random()*canvas.height, r:Math.random()*1.4, a:Math.random(), s:Math.random()*0.4+0.02 });
-      }
-      function loop(){
-        ctx.clearRect(0,0,canvas.width,canvas.height);
-        for(let s of stars){
-          ctx.beginPath();
-          ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
-          ctx.fillStyle = `rgba(0,216,255,${s.a})`;
-          ctx.fill();
-          s.y += s.s;
-          if(s.y > canvas.height) s.y = 0;
+      // Simple Tokenomics chart
+      const ctx = document.getElementById('chart');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          labels: ['Liquidity', 'Staking', 'Team', 'Marketing', 'Community'],
+          datasets: [{
+            data: [40, 20, 15, 10, 15],
+            backgroundColor: ['#00d8ff', '#00aaff', '#0077b6', '#0096c7', '#00b4d8'],
+            borderWidth: 0
+          }]
+        },
+        options: {
+          plugins: { legend: { labels: { color: '#e5eaf2' } } }
         }
-        requestAnimationFrame(loop);
-      }
-      loop();
-
-      /* ---------- TIMELINE HOVER ---------- */
-      const ms = document.querySelectorAll('#timeline .milestone');
-      ms.forEach(m => {
-        m.addEventListener('mouseenter', ()=> {
-          document.getElementById('milestoneDetail').innerText = m.getAttribute('data-detail');
-          m.style.boxShadow = '0 0 18px rgba(0,216,255,0.10)';
-          m.style.transform = 'translateY(-6px)';
-        });
-        m.addEventListener('mouseleave', ()=> {
-          document.getElementById('milestoneDetail').innerText = '';
-          m.style.boxShadow = '';
-          m.style.transform = 'translateY(0)';
-        });
       });
+
+      // Neon particles background
+      const c = document.getElementById("particles");
+      const ctx2 = c.getContext("2d");
+      c.width = innerWidth;
+      c.height = innerHeight;
+      let particles = [];
+      for (let i = 0; i < 80; i++) {
+        particles.push({
+          x: Math.random() * c.width,
+          y: Math.random() * c.height,
+          r: Math.random() * 2,
+          dx: (Math.random() - 0.5) * 0.5,
+          dy: (Math.random() - 0.5) * 0.5
+        });
+      }
+      function animate() {
+        ctx2.clearRect(0, 0, c.width, c.height);
+        particles.forEach(p => {
+          ctx2.beginPath();
+          ctx2.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx2.fillStyle = "#00d8ff";
+          ctx2.shadowBlur = 12;
+          ctx2.shadowColor = "#00d8ff";
+          ctx2.fill();
+          p.x += p.dx;
+          p.y += p.dy;
+          if (p.x < 0 || p.x > c.width) p.dx *= -1;
+          if (p.y < 0 || p.y > c.height) p.dy *= -1;
+        });
+        requestAnimationFrame(animate);
+      }
+      animate();
     </script>
   </body>
 </html>
