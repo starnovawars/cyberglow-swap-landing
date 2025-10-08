@@ -1,121 +1,177 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FlushNova Protocol</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      background-color: #000000;
-      color: #FFFFFF;
-      font-family: 'Inter', sans-serif;
-    }
-    h1, h2 {
-      font-family: 'Merriweather', serif;
-    }
-    .glow {
-      text-shadow: 0 0 10px #00CFFF;
-    }
-  </style>
-</head>
-<body class="px-6 py-10 max-w-4xl mx-auto">
-  <header class="mb-12 text-center">
-    <h1 class="text-4xl font-bold text-purple-700 glow">FlushNova Protocol</h1>
-    <p class="text-lg text-gray-300 mt-2">The Drainage Empire That Will Govern the DeFi Multiverse</p>
-  </header>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cyberglow Swap – $CGT</title>
+    <style>
+      body {
+        margin: 0;
+        overflow: hidden;
+        font-family: "Poppins", sans-serif;
+        color: #00d8ff;
+        background: radial-gradient(circle at 20% 20%, #0a0f1f, #010613);
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Introduction — The Flash of the Void</h2>
-    <p>Cycles ago, the crypto universe collapsed into chaos—corrupt protocols, soulless swaps, manipulated governance. Then came the Flash of the Void, a galactic purge that drained 12 networks in less than one cycle. From that event emerged $FLUSH, the token that executes, purges, and transforms.</p>
-    <p class="mt-2">From the surviving nodes rose Jarrs89, a silent executor with dominion over the Flush Flash Engine. He founded the Order of the Flush, established the FlushNova Protocol, and declared that only worthy tokens would be exchanged.</p>
-  </section>
+      canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 0;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Institutional Vision</h2>
-    <p>FlushNova Protocol is a galactic ecosystem of financial execution, built on the IOTA EVM and IOTA Rebased network. It redefines value exchange through epic narrative and next-generation DeFi architecture.</p>
-    <p class="mt-2">Its core token, $FLUSH, represents the purge of the obsolete, the execution of the corrupt, and the energy that powers the drainage empire.</p>
-  </section>
+      .content {
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        text-align: center;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">What Problem It Solves</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Fragmented narratives in DeFi</li>
-      <li>Interfaces without identity or purpose</li>
-      <li>Manipulable governance systems</li>
-      <li>Isolated ecosystems lacking real interoperability</li>
-    </ul>
-  </section>
+      h1 {
+        font-size: 3rem;
+        text-shadow: 0 0 15px #00d8ff;
+        animation: glow 3s ease-in-out infinite alternate;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">What Makes It Unique</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Epic lore: Jarrs89, the Flash of the Void, the Order of the Flush</li>
-      <li>Modular architecture: Swap, Token Creation, Governance, Flash Loans, Game Mechanics</li>
-      <li>Integration with IOTA EVM: speed, scalability, and security</li>
-      <li>Institutional aesthetics: logos, lore, interface, and tokenomics aligned</li>
-      <li>$FLUSH token: symbol of execution, governance, and reward</li>
-    </ul>
-  </section>
+      p {
+        font-size: 1.2rem;
+        opacity: 0.9;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Ecosystem Map</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>FlushSwap: Token exchange with judgment narrative</li>
-      <li>FlushForge: Token creation as imperial alchemy</li>
-      <li>FlushLoans: Flash loans under galactic oversight</li>
-      <li>FlushGov: Stellar council and narrative voting</li>
-      <li>FlushArena: DeFi missions with rewards and reputation</li>
-    </ul>
-  </section>
+      button {
+        margin-top: 24px;
+        padding: 12px 28px;
+        font-size: 1rem;
+        color: #00d8ff;
+        background: transparent;
+        border: 2px solid #00d8ff;
+        border-radius: 50px;
+        cursor: pointer;
+        text-shadow: 0 0 6px #00d8ff;
+        transition: 0.3s;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">$FLUSH Tokenomics</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Founding team: 15% (12-month lock and 24-month vesting)</li>
-      <li>Development and liquidity: 25% (progressive release)</li>
-      <li>Community and rewards: 30% (missions, staking, participation)</li>
-      <li>Galactic treasury: 20% (governance and expansion)</li>
-      <li>Audit and partnerships: 10% (strategic allies)</li>
-    </ul>
-    <p class="mt-2 italic">Each unit of $FLUSH is a spark from the Flash of the Void.</p>
-  </section>
+      button:hover {
+        background: #00d8ff;
+        color: #0a0f1f;
+        box-shadow: 0 0 20px #00d8ff;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Galactic Governance</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li>Stellar council with delegates, custodians, and oracles</li>
-      <li>On-chain voting with integrated narrative</li>
-      <li>Proposal types: technical, narrative, economic, alliances</li>
-      <li>Reputation panel and missions with real impact</li>
-    </ul>
-  </section>
+      @keyframes glow {
+        0% {
+          text-shadow: 0 0 8px #00d8ff;
+        }
+        100% {
+          text-shadow: 0 0 20px #00d8ff;
+        }
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Narrative Roadmap</h2>
-    <ul class="list-disc list-inside space-y-1">
-      <li><strong>Phase 1:</strong> Empire Foundation — Lore, branding, architecture, IOTA integration</li>
-      <li><strong>Phase 2:</strong> Stellar Prototype — Contracts, testnet, interface, DeFi missions</li>
-      <li><strong>Phase 3:</strong> Galactic Expansion — Mainnet, governance, alliances, staking</li>
-      <li><strong>Phase 4:</strong> Imperial Consolidation — Audit, new modules, living lore, merchandising</li>
-    </ul>
-  </section>
+      section {
+        padding: 100px 20px;
+        text-align: center;
+        max-width: 900px;
+        margin: auto;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Council Oath</h2>
-    <blockquote class="italic text-gray-300 border-l-4 border-purple-700 pl-4">
-      I swear by the Flash of the Void, by the emblem of the Flush, and by the network that binds us, that I will govern with purpose, execute with justice, and purge without fear. May the Drainage guide me.
-    </blockquote>
-  </section>
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 16px;
+        text-shadow: 0 0 10px #00d8ff;
+      }
 
-  <section class="mb-10">
-    <h2 class="text-2xl text-holographic-blue font-semibold mb-4">Closing</h2>
-    <p>FlushNova is not just a protocol—it is a galactic institution. Its narrative, architecture, and aesthetics are designed to attract DeFi users, gamers, crypto communities, and lore-driven explorers. Every module, token, and interface is aligned with one vision:</p>
-    <p class="mt-2 font-bold text-purple-500 glow">Execute with purpose. Purge with power. Govern with vision.</p>
-  </section>
+      footer {
+        text-align: center;
+        padding: 40px;
+        opacity: 0.7;
+      }
+    </style>
+  </head>
 
-  <footer class="mt-20 text-center text-sm text-gray-500">
-    &copy; 2025 FlushNova Protocol. All rights reserved.
-  </footer>
-</body>
+  <body>
+    <canvas id="stars"></canvas>
+
+    <div class="content">
+      <h1>Cyberglow Swap</h1>
+      <p>El DEX descentralizado en IOTA EVM impulsado por $CGT ⚡</p>
+      <button onclick="alert('Próximamente se habilitará la app DEX ✨')">
+        🚀 Enter App
+      </button>
+    </div>
+
+    <section>
+      <h2>Sobre Cyberglow</h2>
+      <p>
+        Cyberglow Swap ($CGT) es un ecosistema DeFi impulsado por IOTA EVM que
+        permite el intercambio descentralizado de tokens, la creación de pools,
+        y la generación de rendimiento en un entorno sin gas y rápido.
+      </p>
+    </section>
+
+    <section>
+      <h2>Tokenomics</h2>
+      <p>
+        🔹 Token: <b>Cyberglow Token ($CGT)</b><br />
+        🔹 Total Supply: <b>100,000,000 CGT</b><br />
+        🔹 Red: <b>IOTA EVM</b><br />
+        🔹 Utilidad: Swap, Liquidez, Staking y Gobernanza.
+      </p>
+    </section>
+
+    <section>
+      <h2>Roadmap</h2>
+      <p>
+        🚧 Q4 2025 – Lanzamiento del DEX<br />
+        🌐 Q1 2026 – Integración completa con IOTA Wallet<br />
+        💎 Q2 2026 – Staking & Launchpad<br />
+        🪐 Q3 2026 – Expansión multichain
+      </p>
+    </section>
+
+    <footer>
+      © 2025 Cyberglow Swap — Powered by IOTA EVM ⚡
+    </footer>
+
+    <script>
+      // Fondo animado de estrellas
+      const canvas = document.getElementById("stars");
+      const ctx = canvas.getContext("2d");
+      let stars = [];
+      const numStars = 150;
+
+      function resizeCanvas() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
+      window.addEventListener("resize", resizeCanvas);
+      resizeCanvas();
+
+      for (let i = 0; i < numStars; i++) {
+        stars.push({
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
+          radius: Math.random() * 1.5,
+          alpha: Math.random(),
+          speed: Math.random() * 0.3 + 0.05,
+        });
+      }
+
+      function drawStars() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        for (const s of stars) {
+          ctx.beginPath();
+          ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+          ctx.fillStyle = `rgba(0, 216, 255, ${s.alpha})`;
+          ctx.fill();
+          s.y += s.speed;
+          if (s.y > canvas.height) s.y = 0;
+        }
+        requestAnimationFrame(drawStars);
+      }
+      drawStars();
+    </script>
+  </body>
 </html>
