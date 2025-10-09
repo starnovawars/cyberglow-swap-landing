@@ -39,22 +39,32 @@ canvas#stars {
   margin-bottom: 20px;
 }
 
+/* Logo principal con efecto brillante */
 .logo {
   width: 180px;
   height: auto;
-  animation: pulse 3s infinite;
   z-index: 2;
+  animation: pulse 3s infinite;
+  filter: drop-shadow(0 0 25px #00d8ff)
+          drop-shadow(0 0 40px #7b2fff);
 }
 
+/* Nuevo halo: líneas difusas circulares, no bola sólida */
 .halo {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 240px;
-  height: 240px;
-  background: radial-gradient(circle, rgba(123,47,255,0.4) 0%, rgba(0,216,255,0.3) 80%, transparent 100%);
+  width: 260px;
+  height: 260px;
   border-radius: 50%;
   transform: translate(-50%, -50%);
+  background: conic-gradient(
+    from 0deg,
+    rgba(0,216,255,0.15),
+    rgba(123,47,255,0.25),
+    rgba(0,216,255,0.15)
+  );
+  filter: blur(30px);
   animation: rotateHalo 10s linear infinite;
   z-index: 1;
 }
@@ -65,15 +75,15 @@ canvas#stars {
 }
 
 @keyframes pulse {
-  0%, 100% { filter: drop-shadow(0 0 15px #00d8ff); }
-  50% { filter: drop-shadow(0 0 35px #7b2fff); }
+  0%, 100% { filter: drop-shadow(0 0 25px #00d8ff) drop-shadow(0 0 40px #7b2fff); }
+  50% { filter: drop-shadow(0 0 50px #7b2fff) drop-shadow(0 0 60px #00d8ff); }
 }
 
 h1 {
   font-family: 'Orbitron', sans-serif;
   font-size: 2.5rem;
   color: #00d8ff;
-  text-shadow: 0 0 20px #00d8ff;
+  text-shadow: 0 0 25px #00d8ff;
 }
 
 .subtitle {
@@ -157,12 +167,13 @@ footer {
 /* ---------- Responsive ---------- */
 @media (max-width: 768px) {
   .logo {
-    width: 140px;
+    width: 150px;
   }
 
   .halo {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
+    filter: blur(25px);
   }
 
   .hero {
@@ -170,7 +181,7 @@ footer {
   }
 
   h1 {
-    font-size: 1.8rem;
+    font-size: 1.9rem;
   }
 
   .info {
