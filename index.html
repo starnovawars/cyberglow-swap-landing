@@ -1,99 +1,82 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyberglow Swap</title>
-
-  <!-- Font futurista y Font Awesome -->
-  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-  <link rel="stylesheet" href="index.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberGlow Swap</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
-  <canvas id="stars"></canvas>
-
-  <div class="container">
-    <div class="hero">
-      <div class="logo-container">
-        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
-        <div class="halo"></div>
-      </div>
-
-      <h1>Cyberglow Swap</h1>
-      <p class="subtitle">⚡ The Next-Generation DeFi Hub on IOTA EVM ⚡</p>
-
-      <a href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" class="launch-btn">🚀 Launch App</a>
-    </div>
-
-    <section class="info">
-      <div class="block">
-        <h2>About Cyberglow Swap</h2>
-        <p>
-          Cyberglow Swap is a decentralized exchange (DEX) built on the IOTA EVM, designed to power a seamless and secure trading experience in the growing DeFi ecosystem. 
-          Our platform enables token swaps, liquidity provision, and staking — all with lightning-fast transactions and near-zero fees.
-        </p>
-      </div>
-
-      <div class="block">
-        <h2>Why Cyberglow?</h2>
-        <ul>
-          <li>🚀 Built on <strong>IOTA EVM</strong> — secure, scalable, and energy-efficient</li>
-          <li>💎 Deep liquidity and sustainable tokenomics</li>
-          <li>🧠 Smart contracts for automated yield generation</li>
-          <li>🌐 Community-driven governance and transparency</li>
-        </ul>
-      </div>
-
-      <div class="block">
-        <h2>Vision</h2>
-        <p>
-          Our vision is to redefine DeFi on IOTA by providing cutting-edge infrastructure for trading, farming, and governance — connecting the digital economy of tomorrow.
-          Cyberglow is more than a DEX; it’s the pulse of decentralized finance on IOTA.
-        </p>
-      </div>
-    </section>
-
+    <header>
+        <div class="container hero">
+            <img src="https://cdn-icons-png.flaticon.com/512/3523/3523887.png" alt="Logo" class="logo">
+            <h1>CyberGlow Swap</h1>
+            <p>Innovación y confianza en el intercambio digital</p>
+            <a href="#contacto" class="cta-btn">Contáctanos</a>
+        </div>
+    </header>
+    <nav>
+        <div class="container nav-content">
+            <a href="#mision">Misión</a>
+            <a href="#valores">Valores</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#contacto">Contacto</a>
+        </div>
+    </nav>
+    <main>
+        <section class="info" id="mision">
+            <div class="container">
+                <h2>Nuestra Misión</h2>
+                <p>Brindar soluciones seguras, rápidas y transparentes para el intercambio digital, promoviendo la innovación y la confianza en cada transacción.</p>
+            </div>
+        </section>
+        <section class="info alt" id="valores">
+            <div class="container">
+                <h2>Nuestros Valores</h2>
+                <ul>
+                    <li>Transparencia y confianza</li>
+                    <li>Innovación constante</li>
+                    <li>Compromiso con la seguridad</li>
+                    <li>Atención personalizada</li>
+                </ul>
+            </div>
+        </section>
+        <section class="info" id="servicios">
+            <div class="container grid">
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/2721/2721276.png" alt="Rápido">
+                    <h3>Intercambio rápido</h3>
+                    <p>Procesos optimizados para transacciones instantáneas.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Seguro">
+                    <h3>Seguridad garantizada</h3>
+                    <p>Tecnología blockchain y cifrado de punta a punta.</p>
+                </div>
+                <div class="card">
+                    <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Soporte">
+                    <h3>Soporte profesional</h3>
+                    <p>Atención dedicada para tus consultas y necesidades.</p>
+                </div>
+            </div>
+        </section>
+        <section class="contacto" id="contacto">
+            <div class="container">
+                <h2>Contáctanos</h2>
+                <form>
+                    <input type="text" placeholder="Nombre" required>
+                    <input type="email" placeholder="Correo electrónico" required>
+                    <textarea placeholder="Tu mensaje" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+    </main>
     <footer>
-      <div class="socials">
-        <a href="https://x.com/Cyberglowswap" target="_blank"><i class="fab fa-x-twitter"></i></a>
-        <a href="https://x.com/Jarrs899" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://t.me/cyberglowswap" target="_blank"><i class="fab fa-telegram"></i></a>
-        <a href="https://medium.com/@Cyberglowdex/cyberglow-swap-defi-infrastructure-under-construction-on-iota-rebased-evm-a7c3d425efdc" target="_blank"><i class="fab fa-medium"></i></a>
-      </div>
-      <p>© 2025 Cyberglow Swap — Built for the IOTA EVM Revolution</p>
+        <div class="container">
+            <p>© 2025 CyberGlow Swap — Todos los derechos reservados</p>
+        </div>
     </footer>
-  </div>
-
-  <script>
-    const canvas = document.getElementById('stars');
-    const ctx = canvas.getContext('2d');
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-
-    const stars = Array.from({ length: 120 }, () => ({
-      x: Math.random() * canvas.width,
-      y: Math.random() * canvas.height,
-      size: Math.random() * 2,
-      speed: Math.random() * 0.5,
-    }));
-
-    function animateStars() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      stars.forEach((star) => {
-        ctx.beginPath();
-        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-        ctx.fillStyle = '#00d8ff';
-        ctx.shadowBlur = 15;
-        ctx.shadowColor = '#7b2fff';
-        ctx.fill();
-        star.y += star.speed;
-        if (star.y > canvas.height) star.y = 0;
-      });
-      requestAnimationFrame(animateStars);
-    }
-    animateStars();
-  </script>
 </body>
 </html>
