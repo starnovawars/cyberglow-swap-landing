@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Cyberglow Swap — DEX on IOTA EVM</title>
-  <meta name="description" content="Cyberglow Swap ($CGT) — a next-gen decentralized exchange built on IOTA EVM. Fast, feeless swaps and community-driven governance." />
-  <link rel="icon" type="image/png" href="cyberglow-logo.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberglow Swap</title>
+
+  <!-- Font futurista y Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="index.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 </head>
 
 <body>
   <canvas id="stars"></canvas>
 
-  <main class="hero">
-    <div class="logo-wrapper">
-      <div class="halo"></div>
-      <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+  <div class="container">
+    <div class="hero">
+      <div class="logo-container">
+        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+        <div class="halo"></div>
+      </div>
+
+      <h1>Cyberglow Swap</h1>
+      <p class="subtitle">⚡ The Next-Generation DeFi Hub on IOTA EVM ⚡</p>
+
+      <a href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" class="launch-btn">🚀 Launch App</a>
     </div>
 
-    <h1>Cyberglow Swap</h1>
-    <p class="lead">
-      Cyberglow Swap ($CGT) is a next-generation decentralized exchange built on <strong>IOTA EVM</strong>.
-      Swap tokens, provide liquidity, and participate in community-driven governance with lightning-fast and feeless transactions.
-    </p>
+    <section class="info">
+      <div class="block">
+        <h2>About Cyberglow Swap</h2>
+        <p>
+          Cyberglow Swap is a decentralized exchange (DEX) built on the IOTA EVM, designed to power a seamless and secure trading experience in the growing DeFi ecosystem. 
+          Our platform enables token swaps, liquidity provision, and staking — all with lightning-fast transactions and near-zero fees.
+        </p>
+      </div>
 
-    <a href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" class="btn">🚀 Launch App</a>
+      <div class="block">
+        <h2>Why Cyberglow?</h2>
+        <ul>
+          <li>🚀 Built on <strong>IOTA EVM</strong> — secure, scalable, and energy-efficient</li>
+          <li>💎 Deep liquidity and sustainable tokenomics</li>
+          <li>🧠 Smart contracts for automated yield generation</li>
+          <li>🌐 Community-driven governance and transparency</li>
+        </ul>
+      </div>
 
-    <div class="socials">
-      <a href="https://x.com/Cyberglowswap" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="https://x.com/Jarrs899" target="_blank"><i class="fa-solid fa-user-astronaut"></i></a>
-      <a href="https://t.me/cyberglowswap" target="_blank"><i class="fa-brands fa-telegram"></i></a>
-      <a href="https://medium.com/@Cyberglowdex/cyberglow-swap-defi-infrastructure-under-construction-on-iota-rebased-evm-a7c3d425efdc" target="_blank"><i class="fa-brands fa-medium"></i></a>
-    </div>
-  </main>
+      <div class="block">
+        <h2>Vision</h2>
+        <p>
+          Our vision is to redefine DeFi on IOTA by providing cutting-edge infrastructure for trading, farming, and governance — connecting the digital economy of tomorrow.
+          Cyberglow is more than a DEX; it’s the pulse of decentralized finance on IOTA.
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div class="socials">
+        <a href="https://x.com/Cyberglowswap" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://x.com/Jarrs899" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://t.me/cyberglowswap" target="_blank"><i class="fab fa-telegram"></i></a>
+        <a href="https://medium.com/@Cyberglowdex/cyberglow-swap-defi-infrastructure-under-construction-on-iota-rebased-evm-a7c3d425efdc" target="_blank"><i class="fab fa-medium"></i></a>
+      </div>
+      <p>© 2025 Cyberglow Swap — Built for the IOTA EVM Revolution</p>
+    </footer>
+  </div>
 
   <script>
-    // background stars
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
-    function resizeCanvas(){ canvas.width = innerWidth; canvas.height = innerHeight; }
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
 
-    const stars = Array.from({ length: 80 }, () => ({
+    const stars = Array.from({ length: 120 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
-      r: Math.random() * 1.5 + 0.2,
-      s: Math.random() * 0.5 + 0.1
+      size: Math.random() * 2,
+      speed: Math.random() * 0.5,
     }));
 
     function animateStars() {
-      ctx.clearRect(0,0,canvas.width,canvas.height);
-      for (const star of stars) {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach((star) => {
         ctx.beginPath();
-        ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 216, 255, 0.8)";
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = "#7B61FF";
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#00d8ff';
+        ctx.shadowBlur = 15;
+        ctx.shadowColor = '#7b2fff';
         ctx.fill();
-        star.y += star.s;
+        star.y += star.speed;
         if (star.y > canvas.height) star.y = 0;
-      }
+      });
       requestAnimationFrame(animateStars);
     }
     animateStars();
