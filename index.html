@@ -4,11 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Cyberglow Swap — DEX on IOTA EVM</title>
-  <meta name="description" content="Cyberglow Swap ($CGT) — next-gen decentralized exchange built on IOTA EVM. Fast, feeless swaps and community-driven governance." />
+  <meta name="description" content="Cyberglow Swap — next-gen decentralized exchange built on IOTA EVM. Fast, feeless swaps and community-driven DeFi innovation." />
   <link rel="icon" type="image/png" href="cyberglow-logo.png" />
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Orbitron:wght@600&display=swap" rel="stylesheet">
 
   <!-- CSS -->
   <link rel="stylesheet" href="index.css" />
@@ -19,6 +19,7 @@
   <canvas id="stars" aria-hidden="true"></canvas>
 
   <main class="page">
+
     <!-- HERO -->
     <section class="hero" role="region" aria-label="Hero">
       <div class="logo-wrapper">
@@ -33,7 +34,7 @@
       </p>
 
       <div class="hero-ctas">
-        <a class="btn primary big" href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" rel="noopener">🚀 Launch App</a>
+        <a class="btn primary big" href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" rel="noopener noreferrer">🚀 Launch App</a>
       </div>
     </section>
 
@@ -41,8 +42,8 @@
     <section class="about" id="about">
       <h2>About Cyberglow Swap</h2>
       <p>
-        Cyberglow Swap is a next-gen DEX leveraging the scalability of IOTA EVM.  
-        Our mission is to simplify decentralized trading through intuitive design, fast execution, and a secure environment — empowering users to take control of their assets.
+        Cyberglow Swap is a next-generation DEX leveraging IOTA EVM to bring scalability, efficiency, and real decentralization.  
+        Our goal is to create a feeless and user-friendly trading experience where users maintain full control of their assets.
       </p>
     </section>
 
@@ -71,6 +72,24 @@
       </div>
     </section>
 
+    <!-- ECOSYSTEM -->
+    <section class="ecosystem" id="ecosystem">
+      <h2>Our Ecosystem</h2>
+      <p>
+        Built on <strong>IOTA EVM</strong>, Cyberglow connects a network of decentralized applications, liquidity providers, and users.  
+        Our ecosystem fosters interoperability, supporting integrations with leading Web3 platforms and emerging DeFi protocols.
+      </p>
+    </section>
+
+    <!-- COMMUNITY -->
+    <section class="community" id="community">
+      <h2>Community & Governance</h2>
+      <p>
+        Cyberglow is governed by its community. Token holders will shape the platform’s evolution — from listings and partnerships to new DeFi features.  
+        Transparency, collaboration, and empowerment are the pillars of our mission.
+      </p>
+    </section>
+
     <!-- VISION -->
     <section class="vision" id="vision">
       <h2>The Road Ahead</h2>
@@ -79,19 +98,20 @@
         From governance tools to cross-chain interoperability, the future is bright, transparent, and decentralized.
       </p>
 
-      <a class="btn cta" href="https://starnovawars.github.io/cyberglow-swap/" target="_blank">Join the Glow</a>
+      <a class="btn cta" href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" rel="noopener noreferrer">Join the Glow</a>
     </section>
 
+    <!-- FOOTER -->
     <footer class="site-footer">
       <div class="footer-inner">
         <div class="footer-left">
           <strong>Cyberglow Swap</strong> • Built for IOTA EVM
         </div>
         <div class="footer-right socials">
-          <a href="https://x.com/Cyberglowswap" target="_blank" rel="noopener">𝕏</a>
-          <a href="https://t.me/cyberglowswap" target="_blank" rel="noopener">Telegram</a>
-          <a href="https://medium.com/@Cyberglowdex" target="_blank" rel="noopener">Medium</a>
-          <a href="https://x.com/Jarrs899" target="_blank" rel="noopener">Founder</a>
+          <a href="https://x.com/Cyberglowswap" target="_blank" rel="noopener noreferrer">𝕏</a>
+          <a href="https://t.me/cyberglowswap" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a href="https://medium.com/@Cyberglowdex" target="_blank" rel="noopener noreferrer">Medium</a>
+          <a href="https://x.com/Jarrs899" target="_blank" rel="noopener noreferrer">Founder</a>
         </div>
       </div>
       <div class="credit">© 2025 Cyberglow Swap — All rights reserved</div>
@@ -107,7 +127,7 @@
     resizeCanvas();
 
     const stars = [];
-    for(let i=0;i<100;i++){
+    for(let i=0;i<120;i++){
       stars.push({
         x: Math.random()*canvas.width,
         y: Math.random()*canvas.height,
@@ -122,7 +142,7 @@
         ctx.beginPath();
         ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
         ctx.fillStyle = '#00d8ff';
-        ctx.shadowBlur = 10;
+        ctx.shadowBlur = 12;
         ctx.shadowColor = '#8A2BE2';
         ctx.fill();
         s.y += s.s;
