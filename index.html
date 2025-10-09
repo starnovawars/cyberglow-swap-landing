@@ -1,142 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cyberglow Swap</title>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cyberglow Swap — DEX on IOTA EVM</title>
+  <meta name="description" content="Cyberglow Swap ($CGT) — next-gen decentralized exchange built on IOTA EVM. Fast, feeless swaps and community-driven governance." />
+  <link rel="icon" type="image/png" href="cyberglow-logo.png" />
 
-    <!-- Styles -->
-    <link rel="stylesheet" href="index.css" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Roboto+Slab:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- Futuristic Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css" />
+</head>
 
-  <body>
-    <!-- Background Particles -->
-    <canvas id="stars"></canvas>
+<body>
+  <!-- animated stars background -->
+  <canvas id="stars" aria-hidden="true"></canvas>
 
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="halo"></div>
-      <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+  <!-- floating background badges (IOTA, EVM) -->
+  <div class="floating-badge badge-iota" aria-hidden="true">
+    <!-- simple glyph to represent IOTA -->
+    <svg viewBox="0 0 100 100" class="badge-icon" aria-hidden="true">
+      <circle cx="50" cy="50" r="22" fill="#00D8FF" opacity="0.95"/>
+      <circle cx="50" cy="50" r="9" fill="#0E0533"/>
+    </svg>
+    <span>IOTA</span>
+  </div>
 
-      <h1 class="title">Cyberglow Swap</h1>
-      <p class="subtitle">⚡ Decentralized Exchange on IOTA EVM ⚡</p>
+  <div class="floating-badge badge-evm" aria-hidden="true">
+    <!-- simple glyph to represent EVM -->
+    <svg viewBox="0 0 100 100" class="badge-icon" aria-hidden="true">
+      <rect x="18" y="18" width="64" height="64" rx="10" fill="#8A2BE2" opacity="0.95" />
+      <circle cx="50" cy="50" r="9" fill="#0E0533"/>
+    </svg>
+    <span>EVM</span>
+  </div>
 
-      <a
-        href="https://starnovawars.github.io/cyberglow-swap/"
-        target="_blank"
-        class="launch-btn"
-      >
-        🚀 Launch App
-      </a>
+  <main class="page">
+    <header class="topbar">
+      <div class="brand">
+        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="brand-logo" />
+        <div class="brand-text">
+          <div class="brand-title">Cyberglow Swap</div>
+          <div class="brand-sub">DEX — IOTA EVM</div>
+        </div>
+      </div>
+
+      <nav class="top-actions" aria-label="Top actions">
+        <button class="btn" id="btnAddIota">Add IOTA EVM</button>
+        <button class="btn" id="btnAddTest">Add IOTA Testnet</button>
+        <button class="btn primary" id="btnConnect">Connect Wallet</button>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" role="region" aria-label="Hero">
+      <div class="logo-wrapper">
+        <div class="halo" aria-hidden="true"></div>
+        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+      </div>
+
+      <h1 class="hero-title">Cyberglow Swap</h1>
+      <p class="hero-sub">
+        Cyberglow Swap (<strong>$CGT</strong>) is a next-generation decentralized exchange on <strong>IOTA EVM</strong>.
+        Trade with near-zero fees, participate in yield programs and governance, and connect with a fast, scalable EVM-compatible ecosystem.
+      </p>
+
+      <div class="hero-ctas">
+        <a class="btn primary big" href="https://starnovawars.github.io/cyberglow-swap/" target="_blank" rel="noopener">🚀 Launch App</a>
+        <button class="btn" id="btnMetaShort">MetaMask: <span id="metaLabel">Not connected</span></button>
+      </div>
     </section>
 
-    <!-- About Section -->
-    <section class="about">
+    <!-- ABOUT -->
+    <section class="about" id="about">
       <h2>About Cyberglow Swap</h2>
       <p>
-        Cyberglow Swap is the first community-driven decentralized exchange built
-        on the IOTA EVM. Our mission is to create a fast, secure, and transparent
-        DeFi experience with near-zero fees. We aim to connect traditional DeFi
-        tools with IOTA’s feeless and scalable infrastructure, enabling anyone to
-        trade and participate in the future of finance.
+        Cyberglow Swap is the first community-focused DEX built specifically for the IOTA EVM. We combine automated market-making,
+        staking and a DAO-based governance model so the community can propose and vote on upgrades. Our priority is secure, transparent,
+        and accessible DeFi that leverages IOTA's feeless and high-throughput capabilities.
       </p>
     </section>
 
-    <!-- Highlights Section -->
-    <section class="highlights">
-      <h2>Why Choose Cyberglow?</h2>
-      <div class="cards">
-        <div class="card">
-          ⚡
+    <!-- HIGHLIGHTS -->
+    <section class="highlights" id="highlights">
+      <h2>Why Cyberglow?</h2>
+
+      <div class="card-grid">
+        <article class="card">
+          <div class="card-icon">⚡</div>
           <h3>Feeless Transactions</h3>
-          <p>Trade instantly with near-zero fees on the IOTA EVM network.</p>
-        </div>
-        <div class="card">
-          🧠
-          <h3>Smart DeFi Tools</h3>
-          <p>
-            Manage liquidity, staking, and yield farming with a seamless
-            experience.
-          </p>
-        </div>
-        <div class="card">
-          🌍
-          <h3>Community Governance</h3>
-          <p>
-            Empower users through DAO voting and earn rewards for participation.
-          </p>
-        </div>
+          <p>Enjoy ultra-low operation costs and fast finality thanks to IOTA EVM.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🔗</div>
+          <h3>DeFi Primitives</h3>
+          <p>AMM swaps, liquidity pools and yield programs designed for real users and builders.</p>
+        </article>
+
+        <article class="card">
+          <div class="card-icon">🛡️</div>
+          <h3>Security & Transparency</h3>
+          <p>Smart contracts are designed with safety in mind; audits and open governance increase trust.</p>
+        </article>
       </div>
     </section>
 
-    <!-- Vision Section -->
-    <section class="vision">
+    <!-- VISION -->
+    <section class="vision" id="vision">
       <h2>The Road Ahead</h2>
       <p>
-        Our goal is to illuminate the DeFi ecosystem on IOTA by building
-        sustainable and transparent infrastructure. Cyberglow Swap is more than
-        just a DEX — it’s a gateway connecting users, developers, and innovators
-        across Web3.
+        We aim to become the luminous gateway for DeFi on IOTA: cross-chain bridges, governance modules, and developer tooling are on our roadmap.
+        Cyberglow's vision is a community-driven, sustainable DeFi ecosystem where users and builders co-create value.
       </p>
-      <a
-        href="https://starnovawars.github.io/cyberglow-swap/"
-        target="_blank"
-        class="cta-btn"
-        >Join the Glow 🌐</a
-      >
+
+      <a class="btn cta" href="https://starnovawars.github.io/cyberglow-swap/" target="_blank">Join the Glow</a>
     </section>
 
-    <!-- Social Footer -->
-    <footer>
-      <h3>Connect with Us</h3>
-      <div class="socials">
-        <a href="https://x.com/Cyberglowswap" target="_blank">𝕏</a>
-        <a href="https://t.me/cyberglowswap" target="_blank">Telegram</a>
-        <a
-          href="https://medium.com/@Cyberglowdex/cyberglow-swap-defi-infrastructure-under-construction-on-iota-rebased-evm-a7c3d425efdc"
-          target="_blank"
-          >Medium</a
-        >
-        <a href="https://x.com/Jarrs899" target="_blank">Founder</a>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <div class="footer-left">
+          <strong>Cyberglow Swap</strong> • Built on IOTA EVM
+        </div>
+        <div class="footer-right socials">
+          <a href="https://x.com/Cyberglowswap" target="_blank" rel="noopener">𝕏</a>
+          <a href="https://t.me/cyberglowswap" target="_blank" rel="noopener">Telegram</a>
+          <a href="https://medium.com/@Cyberglowdex" target="_blank" rel="noopener">Medium</a>
+          <a href="https://x.com/Jarrs899" target="_blank" rel="noopener">Founder</a>
+        </div>
       </div>
-      <p>© 2025 Cyberglow Swap. Built on IOTA EVM.</p>
+      <div class="credit">© 2025 Cyberglow Swap — All rights reserved</div>
     </footer>
+  </main>
 
-    <!-- Stars Background Animation -->
-    <script>
-      const canvas = document.getElementById("stars");
-      const ctx = canvas.getContext("2d");
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+  <!-- Scripts: stars, wallet, network helpers -->
+  <script>
+    /* ---------- Stars background ---------- */
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas(){ canvas.width = innerWidth; canvas.height = innerHeight; }
+    window.addEventListener('resize', resizeCanvas);
+    resizeCanvas();
 
-      const stars = Array.from({ length: 120 }, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 2,
-        speed: Math.random() * 0.3,
-      }));
+    const stars = [];
+    const STAR_COUNT = Math.max(80, Math.floor(window.innerWidth/10));
+    for(let i=0;i<STAR_COUNT;i++){
+      stars.push({
+        x: Math.random()*canvas.width,
+        y: Math.random()*canvas.height,
+        r: Math.random()*1.6 + 0.2,
+        a: Math.random()*0.9,
+        s: Math.random()*0.4 + 0.02
+      });
+    }
 
-      function animateStars() {
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        stars.forEach((star) => {
-          ctx.beginPath();
-          ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
-          ctx.fillStyle = "#00d8ff";
-          ctx.shadowBlur = 10;
-          ctx.shadowColor = "#00ffff";
-          ctx.fill();
-          star.y += star.speed;
-          if (star.y > canvas.height) star.y = 0;
-        });
-        requestAnimationFrame(animateStars);
+    function drawStars(){
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      for(const s of stars){
+        ctx.beginPath();
+        ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+        ctx.fillStyle = `rgba(0,216,255,${s.a})`;
+        ctx.shadowBlur = 10;
+        ctx.shadowColor = "#8A2BE2";
+        ctx.fill();
+        s.y += s.s;
+        if(s.y > canvas.height) s.y = 0;
       }
-      animateStars();
-    </script>
-  </body>
+      requestAnimationFrame(drawStars);
+    }
+    drawStars();
+
+    /* ---------- Floating badges motion (CSS handles animation); nothing required here ---------- */
+
+    /* ---------- MetaMask helpers ---------- */
+    const btnConnect = document.getElementById('btnConnect');
+    const btnMetaShort = document.getElementById('btnMetaShort');
+    const metaLabel = document.getElementById('metaLabel');
+
+    function shortAddr(addr){
+      if(!addr) return '';
+      return addr.slice(0,6) + '...' + addr.slice(-4);
+    }
+
+    async function connectMetaMask(){
+      if(!window.ethereum){
+        alert('MetaMask not found. Install MetaMask or use a compatible browser.');
+        return;
+      }
+      try{
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        const address = accounts[0];
+        metaLabel.textContent = shortAddr(address);
+
+        // get native balance (eth style) — might be IOTA on chain
+        const balanceHex = await window.ethereum.request({ method: 'eth_getBalance', params: [address, 'latest'] });
+        const balance = parseInt(balanceHex || '0', 16) / 1e18;
+        metaLabel.textContent = shortAddr(address) + ' • ' + (balance.toFixed(4));
+      } catch(e){
+        console.error(e);
+        alert('Error connecting MetaMask: ' + (e.message || e));
+      }
+    }
+
+    btnConnect.addEventListener('click', connectMetaMask);
+    btnMetaShort && btnMetaShort.addEventListener('click', connectMetaMask);
+
+    /* ---------- Add IOTA EVM network helpers ---------- */
+    document.getElementById('btnAddIota').addEventListener('click', async () => {
+      if(!window.ethereum){ alert('MetaMask not found.'); return; }
+      try{
+        await window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [{
+            chainId: '0x2276', // 8822
+            chainName: 'IOTA EVM Mainnet',
+            nativeCurrency: { name: 'IOTA', symbol: 'IOTA', decimals: 18 },
+            rpcUrls: ['https://json-rpc.evm.iotaledger.net'],
+            blockExplorerUrls: ['https://explorer.evm.iota.org']
+          }]
+        });
+        alert('IOTA EVM Mainnet added or switched.');
+      }catch(e){ console.error(e); alert('Could not add network: ' + (e.message||e)); }
+    });
+
+    document.getElementById('btnAddTest').addEventListener('click', async () => {
+      if(!window.ethereum){ alert('MetaMask not found.'); return; }
+      try{
+        await window.ethereum.request({
+          method: 'wallet_addEthereumChain',
+          params: [{
+            chainId: '0x433', // 1075
+            chainName: 'IOTA EVM Testnet',
+            nativeCurrency: { name: 'tIOTA', symbol: 'tIOTA', decimals: 18 },
+            rpcUrls: ['https://json-rpc.testnet.evm.iotaledger.net'],
+            blockExplorerUrls: ['https://explorer.testnet.evm.iota.org']
+          }]
+        });
+        alert('IOTA EVM Testnet added or switched.');
+      }catch(e){ console.error(e); alert('Could not add network: ' + (e.message||e)); }
+    });
+
+    // handle account / chain changes
+    if(window.ethereum){
+      window.ethereum.on && window.ethereum.on('accountsChanged', (accounts) => {
+        if(accounts.length === 0){
+          metaLabel.textContent = 'Not connected';
+        } else {
+          metaLabel.textContent = shortAddr(accounts[0]);
+        }
+      });
+      window.ethereum.on && window.ethereum.on('chainChanged', (chainId) => {
+        console.log('chain changed', chainId);
+      });
+    }
+  </script>
+</body>
 </html>
