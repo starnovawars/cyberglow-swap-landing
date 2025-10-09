@@ -1,183 +1,92 @@
-/* General Styles */
-body {
-  margin: 0;
-  font-family: "Orbitron", sans-serif;
-  color: #e0f7ff;
-  background: radial-gradient(circle at top, #020024, #090979, #000010);
-  overflow-x: hidden;
+/* ---------- Root / base ---------- */
+:root{
+  --bg-1: #020024;
+  --bg-2: #070622;
+  --neon-cyan: #00D8FF;
+  --neon-violet: #8A2BE2;
+  --muted: #cfeffc;
 }
 
-/* Canvas Stars */
-canvas#stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+*{box-sizing:border-box}
+html,body{height:100%;margin:0;font-family:"Poppins",system-ui,-apple-system,Segoe UI,Roboto,"Helvetica Neue",Arial; background: radial-gradient(circle at 10% 10%, var(--bg-1), #000010 60%); color:#e8fbff;}
 
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding-top: 120px;
-  position: relative;
-}
+/* Stars canvas */
+canvas#stars{position:fixed; inset:0; z-index:0}
 
-/* Halo Animation */
-.halo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 340px;
-  height: 340px;
-  border-radius: 50%;
-  background: conic-gradient(
-    from 0deg,
-    rgba(0, 255, 255, 0.2),
-    rgba(100, 0, 255, 0.3),
-    rgba(0, 255, 255, 0.2)
-  );
-  animation: rotate 8s linear infinite;
-  filter: blur(25px);
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-
-@keyframes rotate {
-  from {
-    transform: translate(-50%, -50%) rotate(0deg);
-  }
-  to {
-    transform: translate(-50%, -50%) rotate(360deg);
-  }
-}
-
-/* Logo */
-.logo {
-  width: 220px;
-  animation: float 4s ease-in-out infinite;
-  filter: drop-shadow(0 0 12px #00ffff) drop-shadow(0 0 30px #8a2be2);
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
-}
-
-/* Titles */
-.title {
-  color: #00d8ff;
-  font-size: 2.8rem;
-  text-shadow: 0 0 20px #00ffff;
-}
-
-.subtitle {
-  color: #d0f0ff;
-  font-size: 1.2rem;
-  margin-top: 10px;
-  opacity: 0.85;
-}
+/* Topbar */
+.topbar{display:flex; align-items:center; justify-content:space-between; width:100%; padding:18px 28px; position:relative; z-index:3}
+.brand{display:flex; align-items:center; gap:12px}
+.brand-logo{width:42px;height:auto; filter:drop-shadow(0 0 10px rgba(0,216,255,0.25))}
+.brand-title{font-weight:700; color:var(--neon-cyan); letter-spacing:0.6px}
+.brand-sub{font-size:12px; color:rgba(207,239,252,0.7)}
 
 /* Buttons */
-.launch-btn,
-.cta-btn {
-  background: linear-gradient(90deg, #00d8ff, #8a2be2);
-  color: #fff;
-  padding: 12px 28px;
-  border-radius: 10px;
-  text-decoration: none;
-  font-weight: bold;
-  margin-top: 25px;
-  display: inline-block;
-  box-shadow: 0 0 20px #00ffff;
-  transition: all 0.3s ease;
-}
+.btn{background:transparent;border:1px solid rgba(0,216,255,0.08); color:var(--neon-cyan); padding:8px 12px; border-radius:999px; cursor:pointer; transition:transform .18s, box-shadow .18s}
+.btn.primary{background:linear-gradient(90deg,var(--neon-cyan),var(--neon-violet)); color:#02111a; border:none; box-shadow:0 10px 30px rgba(138,43,226,0.10)}
+.btn.big{padding:14px 28px; font-size:1rem}
 
-.launch-btn:hover,
-.cta-btn:hover {
-  transform: scale(1.07);
-  box-shadow: 0 0 40px #8a2be2;
-}
+/* Floating badges (IOTA, EVM) */
+.floating-badge{position:fixed; z-index:1; display:flex; align-items:center; gap:8px; padding:8px 12px; border-radius:999px; backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.02); color:var(--muted); font-weight:600}
+.badge-iota{left:6%; top:18%; transform-origin:center; animation: floatSmall 8s ease-in-out infinite;}
+.badge-evm{right:6%; top:28%; transform-origin:center; animation: floatSmallReverse 9s ease-in-out infinite;}
+.badge-icon{width:28px;height:28px}
+.floating-badge span{font-size:13px; color:var(--neon-cyan)}
 
-/* Sections */
-section {
-  max-width: 900px;
-  margin: 100px auto;
-  text-align: center;
-  padding: 0 20px;
-}
+/* Hero */
+.page{position:relative; z-index:2; min-height:100vh; display:flex; flex-direction:column}
+.hero{display:flex; flex-direction:column; align-items:center; justify-content:center; gap:18px; padding:36px 20px 20px; text-align:center}
+.logo-wrapper{position:relative; display:flex; align-items:center; justify-content:center}
+.logo{width:200px; height:auto; z-index:2; filter:drop-shadow(0 0 18px rgba(0,216,255,0.85)) drop-shadow(0 0 48px rgba(138,43,226,0.35)); animation: float 5s ease-in-out infinite}
+.halo{position:absolute; width:360px; height:360px; border-radius:50%; z-index:1; top:50%; left:50%; transform:translate(-50%,-50%); background:conic-gradient(from 0deg, rgba(0,216,255,0.18), rgba(138,43,226,0.28), rgba(0,216,255,0.12)); filter:blur(36px); animation: rotateSlow 18s linear infinite}
 
-section h2 {
-  color: #00ffff;
-  text-shadow: 0 0 20px #8a2be2;
-  margin-bottom: 20px;
-}
+/* Titles */
+.hero-title{margin:0; font-size:2.6rem; color:var(--neon-cyan); text-shadow:0 0 18px rgba(0,216,255,0.14); font-weight:700}
+.hero-sub{max-width:920px; color:var(--muted); font-size:1.05rem; line-height:1.5}
 
-section p {
-  line-height: 1.6;
-  opacity: 0.9;
-}
+/* CTAs */
+.hero-ctas{display:flex; gap:12px; align-items:center; justify-content:center; margin-top:6px}
 
-/* Highlights Cards */
-.cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-}
+/* Sections / cards */
+section{max-width:980px; margin:56px auto; padding:0 18px; text-align:center}
+section h2{color:var(--neon-cyan); text-shadow:0 0 12px rgba(138,43,226,0.06)}
+.card-grid{display:flex; gap:18px; justify-content:center; flex-wrap:wrap; margin-top:18px}
+.card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); border:1px solid rgba(0,216,255,0.04); width:280px; padding:18px; border-radius:12px; box-shadow:0 6px 24px rgba(0,0,0,0.35)}
 
-.card {
-  background: rgba(0, 20, 40, 0.5);
-  border: 1px solid rgba(0, 255, 255, 0.2);
-  border-radius: 15px;
-  width: 260px;
-  padding: 20px;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(0, 255, 255, 0.1);
-  transition: all 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 30px #8a2be2;
-}
+/* Vision CTA */
+.cta{display:inline-block; margin-top:14px; background:linear-gradient(90deg,var(--neon-cyan),var(--neon-violet)); color:#02111a; padding:10px 20px; border-radius:10px; text-decoration:none}
 
 /* Footer */
-footer {
-  text-align: center;
-  padding: 50px 20px;
-  background: rgba(0, 0, 20, 0.6);
-  border-top: 1px solid rgba(0, 255, 255, 0.2);
+.site-footer{margin-top:36px; padding:28px 18px; border-top:1px solid rgba(0,255,255,0.04); text-align:center; color:rgba(230,250,255,0.85)}
+.site-footer .socials a{margin:0 8px; color:var(--neon-cyan); text-decoration:none; font-weight:700}
+
+/* Animations */
+@keyframes float {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
+}
+@keyframes floatSmall {
+  0%,100%{transform:translateY(0) rotate(-4deg)}
+  50%{transform:translateY(-8px) rotate(4deg)}
+}
+@keyframes floatSmallReverse {
+  0%,100%{transform:translateY(0) rotate(4deg)}
+  50%{transform:translateY(-6px) rotate(-4deg)}
+}
+@keyframes rotateSlow {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to   { transform: translate(-50%,-50%) rotate(360deg); }
 }
 
-footer h3 {
-  color: #00d8ff;
+/* Responsive */
+@media (max-width: 900px){
+  .hero-title{font-size:2.0rem}
+  .logo{width:170px}
+  .halo{width:260px;height:260px; filter:blur(28px)}
+  .floating-badge{display:none} /* hide badges on small screens for clarity */
 }
-
-.socials {
-  margin: 15px 0;
-}
-
-.socials a {
-  margin: 0 10px;
-  color: #00ffff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s;
-}
-
-.socials a:hover {
-  color: #8a2be2;
-}
-
-footer p {
-  font-size: 0.9rem;
-  opacity: 0.7;
-  margin-top: 15px;
+@media (max-width: 480px){
+  .brand-title{font-size:14px}
+  .logo{width:140px}
+  section{margin:28px auto; padding:0 14px}
+  .card{width:100%}
 }
