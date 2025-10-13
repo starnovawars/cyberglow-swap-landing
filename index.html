@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyberglow Swap | IOTA EVM DEX</title>
-  <!-- Fuentes y Font Awesome -->
+  <!-- Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="index.css" />
@@ -115,4 +115,62 @@
       <div class="footer-links">
         <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/README.md" target="_blank">📄 Documentation</a>
         <span>•</span>
-        <a href="https://
+        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/AUDIT.md" target="_blank">🛡️ Audit Report</a>
+        <span>•</span>
+        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/docs/USER_GUIDE.md" target="_blank">👤 User Guide</a>
+        <span>•</span>
+        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/docs/DEVELOPER_GUIDE.md" target="_blank">💻 Developer Guide</a>
+        <span>•</span>
+        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/docs/CONTRACT_SPECS.md" target="_blank">⚙️ Contract Specs</a>
+      </div>
+      <p>© 2025 Cyberglow Swap — Built for the IOTA EVM Revolution</p>
+    </footer>
+  </div>
+
+  <!-- Fondo animado de estrellas -->
+  <script>
+    // Más estrellas, movimiento lento y suave, algunas brillan
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    function resizeStars() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener('resize', resizeStars);
+    resizeStars();
+
+    // 240 estrellas para fondo denso y cósmico
+    const stars = Array.from({ length: 240 }, () => ({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      size: Math.random() * 1.4 + 0.3,
+      speed: Math.random() * 0.13 + 0.03,
+      alpha: Math.random() * 0.7 + 0.3,
+      twinkle: Math.random() * Math.PI * 2
+    }));
+
+    function animateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      stars.forEach((star, i) => {
+        // Twinkle effect
+        const twinkle = 0.25 + 0.75 * Math.abs(Math.sin(star.twinkle + Date.now() * 0.00065 + i));
+        ctx.globalAlpha = star.alpha * twinkle;
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = '#fff';
+        ctx.shadowBlur = 16;
+        ctx.shadowColor = '#00d8ff';
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      ctx.globalAlpha = 1;
+      requestAnimationFrame(animateStars);
+    }
+    animateStars();
+  </script>
+</body>
+</html>
