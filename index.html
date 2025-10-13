@@ -3,223 +3,59 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyberglow Swap | DeFi Platform Simulation</title>
+  <title>Cyberglow Swap | DeFi Platform on IOTA EVM</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="index.css" />
-  <style>
-    /* --- Puedes pegar aquí el CSS cósmico anterior, más el siguiente: --- */
-    .dapps-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2.2rem;
-      margin-bottom: 2.5rem;
-      width: 100%;
-    }
-    .dapp-card {
-      background: rgba(21,30,48,0.92);
-      border-radius: 18px;
-      box-shadow: 0 2px 18px #00eaff22;
-      border: 1.5px solid #144264;
-      padding: 2.1rem 1.1rem 1.2rem 1.1rem;
-      text-align: center;
-      color: #e0f7ff;
-      position: relative;
-      min-height: 215px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-    .dapp-card h3 {
-      font-family: 'Orbitron', Arial, sans-serif;
-      color: #00eaff;
-      font-size: 1.22rem;
-      margin-bottom: 0.7em;
-      font-weight: 700;
-      letter-spacing: .5px;
-    }
-    .dapp-card p {
-      font-size: 1.03em;
-      color: #b6e8ff;
-      margin-bottom: 1.1em;
-      min-height: 50px;
-    }
-    .dapp-card .simulate-btn {
-      background: linear-gradient(90deg, #00eaff 0%, #7b2fff 100%);
-      color: #fff;
-      font-family: 'Orbitron', Arial, sans-serif;
-      font-weight: 700;
-      padding: 0.6rem 1.5rem;
-      border: none;
-      border-radius: 22px;
-      font-size: 1.08rem;
-      cursor: pointer;
-      box-shadow: 0 2px 14px #00eaff33;
-      margin-top: auto;
-      transition: background 0.18s, transform 0.13s;
-    }
-    .dapp-card .simulate-btn:hover {
-      background: linear-gradient(90deg, #7b2fff, #00eaff 90%);
-      transform: translateY(-2px) scale(1.04);
-    }
-    .modal-bg {
-      display: none;
-      position: fixed;
-      top:0; left:0; width:100vw; height:100vh;
-      background: rgba(10,20,30,0.85);
-      z-index: 2000;
-      align-items: center;
-      justify-content: center;
-    }
-    .modal-bg.active { display: flex; }
-    .modal-content {
-      background: #17213a;
-      color: #fff;
-      border-radius: 20px;
-      padding: 2.5em 1.6em 2.2em 1.6em;
-      box-shadow: 0 4px 32px #00eaff33;
-      max-width: 330px;
-      text-align: center;
-      position: relative;
-    }
-    .modal-content h2 {
-      color: #00eaff;
-      font-family: 'Orbitron', Arial, sans-serif;
-      font-size: 1.3rem;
-      margin-bottom: 1em;
-    }
-    .modal-content .close-modal {
-      position: absolute;
-      top: 8px; right: 14px;
-      color: #7b2fff;
-      font-size: 1.5rem;
-      cursor: pointer;
-      background: none;
-      border: none;
-    }
-  </style>
 </head>
 <body>
   <canvas id="stars"></canvas>
   <div class="container">
+    <!-- LOGO GRANDE Y HEADER -->
     <header class="main-header">
       <div class="logo-center">
         <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo-main" />
       </div>
     </header>
+
+    <!-- HERO Y MENSAJE -->
     <section class="hero">
       <div class="hero-badge">
         <i class="fa-solid fa-bolt"></i> Next Generation DEX on IOTA EVM
       </div>
       <h1>
-        We're building the future.<br>
-        <span class="glow-title">Cyberglow DeFi Platform</span>
+        Trade, Earn<br>
+        and Boost<br>
+        with the Power of<br>
+        <span class="glow-title">Cyberglow Swap</span>
       </h1>
       <p class="construction-message">
-        Explore the modules we are designing for the Cyberglow ecosystem.<br>
-        All features below are simulated previews for our vision.
+        <strong>🚧 We're building the future of DeFi on IOTA EVM!</strong><br>
+        The Cyberglow team is working to bring you a full decentralized finance suite including:
       </p>
+      <ul class="features-list">
+        <li>Swap</li>
+        <li>Lending</li>
+        <li>Liquid Staking</li>
+        <li>Restaking</li>
+        <li>DAO Studio</li>
+        <li>Crowdfunding + Oracles</li>
+        <li>Prediction Market</li>
+        <li>RWA Tokenization</li>
+        <li>Asset Tokenization WWI</li>
+        <li>EBST Twin</li>
+        <li>Launchpad</li>
+        <li>Lore Engine</li>
+        <li>Utility NFTs</li>
+        <li>Web3 Casino</li>
+        <li>Mini Games Web3</li>
+        <li>Tracker dApp</li>
+        <li>DeFi Dashboard</li>
+        <li>Cyberglow Explorer</li>
+        <li>Cyberglow Wallet</li>
+      </ul>
+      <a href="https://v0-cyberglow-platform-development.vercel.app/" class="launch-btn" target="_blank">🚀 Launch App</a>
     </section>
-
-    <!-- GRID DE DAPPS -->
-    <div class="dapps-grid">
-      <div class="dapp-card">
-        <h3>Swap</h3>
-        <p>Exchange any IOTA EVM token instantly and securely.</p>
-        <button class="simulate-btn" data-dapp="Swap">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Lending</h3>
-        <p>Lend or borrow assets with decentralized liquidity pools.</p>
-        <button class="simulate-btn" data-dapp="Lending">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Liquid Staking</h3>
-        <p>Stake tokens and maintain liquidity with liquid staking derivatives.</p>
-        <button class="simulate-btn" data-dapp="Liquid Staking">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Restaking</h3>
-        <p>Boost your returns by restaking assets across multiple protocols.</p>
-        <button class="simulate-btn" data-dapp="Restaking">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>DAO Studio</h3>
-        <p>Launch and govern DAOs with advanced tooling and smart contracts.</p>
-        <button class="simulate-btn" data-dapp="DAO Studio">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Crowdfunding + Oracles</h3>
-        <p>Raise funds transparently and connect with secure data oracles.</p>
-        <button class="simulate-btn" data-dapp="Crowdfunding + Oracles">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Prediction Market</h3>
-        <p>Bet on event outcomes and earn on accurate predictions.</p>
-        <button class="simulate-btn" data-dapp="Prediction Market">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>RWA Tokenization</h3>
-        <p>Tokenize real-world assets for global access and liquidity.</p>
-        <button class="simulate-btn" data-dapp="RWA Tokenization">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Asset Tokenization WWI</h3>
-        <p>World-wide infrastructure for tokenizing any asset class.</p>
-        <button class="simulate-btn" data-dapp="Asset Tokenization WWI">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>EBST Twin</h3>
-        <p>Digital twins for asset tracking and verification on-chain.</p>
-        <button class="simulate-btn" data-dapp="EBST Twin">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Launchpad</h3>
-        <p>Seamlessly launch new tokens and projects on Cyberglow.</p>
-        <button class="simulate-btn" data-dapp="Launchpad">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Lore Engine</h3>
-        <p>Automated storytelling and NFT lore generation for your collections.</p>
-        <button class="simulate-btn" data-dapp="Lore Engine">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Utility NFTs</h3>
-        <p>Unlock perks, rewards, and utility via NFT integrations.</p>
-        <button class="simulate-btn" data-dapp="Utility NFTs">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Web3 Casino</h3>
-        <p>Provably fair casino games on-chain with instant payouts.</p>
-        <button class="simulate-btn" data-dapp="Web3 Casino">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Mini Games Web3</h3>
-        <p>Casual blockchain games with real rewards and NFT prizes.</p>
-        <button class="simulate-btn" data-dapp="Mini Games Web3">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Tracker dApp</h3>
-        <p>Track your DeFi portfolio and all asset movements in one place.</p>
-        <button class="simulate-btn" data-dapp="Tracker dApp">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>DeFi Dashboard</h3>
-        <p>Unified dashboard for analytics, yields, and risk management.</p>
-        <button class="simulate-btn" data-dapp="DeFi Dashboard">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Cyberglow Explorer</h3>
-        <p>Explore all on-chain transactions and analytics via Cyberglow Explorer.</p>
-        <button class="simulate-btn" data-dapp="Cyberglow Explorer">Simulate</button>
-      </div>
-      <div class="dapp-card">
-        <h3>Cyberglow Wallet</h3>
-        <p>Securely store, send, and receive your digital assets in Cyberglow Wallet.</p>
-        <button class="simulate-btn" data-dapp="Cyberglow Wallet">Simulate</button>
-      </div>
-    </div>
 
     <footer>
       <div class="socials">
@@ -233,18 +69,8 @@
     </footer>
   </div>
 
-  <!-- Modal de simulación -->
-  <div class="modal-bg" id="sim-modal">
-    <div class="modal-content">
-      <button class="close-modal" onclick="closeModal()">&times;</button>
-      <h2 id="modal-title">Simulation</h2>
-      <p id="modal-desc">This is a preview. The <span id="modal-dapp">DApp</span> module is under construction. Stay tuned!</p>
-    </div>
-  </div>
-
-  <!-- Estrellas animadas y modal JS -->
+  <!-- Estrellas animadas -->
   <script>
-    // ---- Estrellas ----
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
     function resizeStars() {
@@ -253,7 +79,8 @@
     }
     window.addEventListener('resize', resizeStars);
     resizeStars();
-    const stars = Array.from({ length: 240 }, () => ({
+    // 220 estrellas suaves, cósmicas
+    const stars = Array.from({ length: 220 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
       size: Math.random() * 1.1 + 0.35,
@@ -282,25 +109,6 @@
       requestAnimationFrame(animateStars);
     }
     animateStars();
-
-    // ---- Modal de simulación ----
-    function closeModal() {
-      document.getElementById('sim-modal').classList.remove('active');
-    }
-    document.querySelectorAll('.simulate-btn').forEach(btn => {
-      btn.onclick = function() {
-        const dapp = this.getAttribute('data-dapp');
-        document.getElementById('modal-title').innerText = `${dapp} Simulation`;
-        document.getElementById('modal-dapp').innerText = dapp;
-        document.getElementById('sim-modal').classList.add('active');
-      };
-    });
-    document.getElementById('sim-modal').addEventListener('click', function(e){
-      if(e.target === this) closeModal();
-    });
-    document.addEventListener('keydown', function(e) {
-      if(e.key === "Escape") closeModal();
-    });
   </script>
 </body>
 </html>
