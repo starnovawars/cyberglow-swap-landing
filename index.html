@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Cyberglow Swap | IOTA EVM DEX</title>
+  <!-- Fonts & Font Awesome -->
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="index.css" />
@@ -11,79 +12,30 @@
 <body>
   <canvas id="stars"></canvas>
   <div class="container">
-    <!-- HEADER -->
-    <header class="main-header">
-      <div class="header-bar">
-        <div class="header-logo">
-          <img src="cyberglow-logo.png" alt="Cyberglow Logo" />
-          <span>Cyberglow</span>
-        </div>
+    <!-- LOGO GRANDE -->
+    <header class="hero">
+      <div class="logo-container">
+        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+        <div class="halo"></div>
       </div>
+      <h1>Cyberglow Swap</h1>
+      <p class="subtitle">The Next-Generation DEX on IOTA EVM</p>
+      <!-- Botón lanzador, activo -->
+      <a href="https://v0-cyberglow-platform-development.vercel.app/" target="_blank" class="launch-btn">🚀 Launch App</a>
     </header>
 
-    <!-- HERO / CONSTRUCTION MESSAGE -->
-    <section class="hero">
-      <div class="hero-content">
-        <h1>
-          The Future of DeFi<br>
-          on IOTA EVM<br>
-          <span class="brand-glow">Cyberglow Swap</span>
-        </h1>
-        <p class="hero-subtitle">
-          <strong>🚧 Platform in Construction</strong><br>
-          We are building a next-generation decentralized exchange and DeFi suite for IOTA EVM.<br>
-          <span class="muted">This is a vision in progress. Join us on our journey!</span>
-        </p>
-        <!-- Launch button now links to the dev platform -->
-        <a href="https://v0-cyberglow-platform-development.vercel.app/" class="launch-btn" target="_blank">🚀 Launch App</a>
-      </div>
+    <!-- AVISO DE CONSTRUCCIÓN -->
+    <section class="construction">
+      <p class="construction-msg">
+        <strong>🚧 Platform in Construction</strong><br>
+        We're building the future of DeFi on IOTA EVM.<br>
+        This is a vision in progress. Join us on our journey!
+      </p>
     </section>
 
-    <!-- FEATURES: Vision Cards -->
-    <section class="features-section">
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-bolt"></i></div>
-        <div>
-          <div class="feature-title">Deep Liquidity</div>
-          <div class="feature-desc">Access deep liquidity pools with minimal slippage for seamless trading across all major tokens (coming soon).</div>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-shield-halved"></i></div>
-        <div>
-          <div class="feature-title">Secure & Audited</div>
-          <div class="feature-desc">Smart contracts on IOTA EVM will be audited for robust security of your assets.</div>
-        </div>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon"><i class="fa-solid fa-leaf"></i></div>
-        <div>
-          <div class="feature-title">Eco Friendly</div>
-          <div class="feature-desc">Leverage IOTA’s scalable, energy-efficient protocol for your DeFi needs.</div>
-        </div>
-      </div>
-    </section>
+    <!-- (Puedes mantener funcionalidades, features, etc. aquí si quieres) -->
 
-    <!-- FUNCTIONALITIES VISION -->
-    <section class="functionalities-section">
-      <h2>Our DeFi Vision</h2>
-      <div class="functionalities-list">
-        <div class="func-card"><div class="func-title">Swap</div><div class="func-desc">Instant token swaps on IOTA EVM</div></div>
-        <div class="func-card"><div class="func-title">Lending</div><div class="func-desc">Lend & borrow with innovative DeFi markets</div></div>
-        <div class="func-card"><div class="func-title">Liquid Staking</div><div class="func-desc">Stake with liquidity access</div></div>
-        <div class="func-card"><div class="func-title">DAO Studio</div><div class="func-desc">Create and manage DAOs</div></div>
-        <div class="func-card"><div class="func-title">Crowdfunding + Oracles</div><div class="func-desc">Decentralized fundraising</div></div>
-        <div class="func-card"><div class="func-title">Prediction Market</div><div class="func-desc">Bet on outcomes & events</div></div>
-        <div class="func-card"><div class="func-title">Asset Tokenization</div><div class="func-desc">Bring real-world assets on-chain</div></div>
-        <div class="func-card"><div class="func-title">Web3 Casino</div><div class="func-desc">Provably fair gaming experiences</div></div>
-        <div class="func-card"><div class="func-title">Mini Games</div><div class="func-desc">Play casual games & earn rewards</div></div>
-        <div class="func-card"><div class="func-title">Tracker</div><div class="func-desc">Track your portfolio performance</div></div>
-        <div class="func-card"><div class="func-title">Dashboard</div><div class="func-desc">Comprehensive analytics hub</div></div>
-        <div class="func-card"><div class="func-title">Explorer</div><div class="func-desc">Explore blockchain transactions</div></div>
-        <div class="func-card"><div class="func-title">Cyberglow Wallet</div><div class="func-desc">Store, send and receive assets</div></div>
-      </div>
-    </section>
-
+    <!-- FOOTER SOLO REDES SOCIALES -->
     <footer>
       <div class="socials">
         <a href="https://x.com/Cyberglowswap" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -96,7 +48,7 @@
     </footer>
   </div>
 
-  <!-- Animated starry background -->
+  <!-- Fondo de estrellas animadas -->
   <script>
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
@@ -106,8 +58,7 @@
     }
     window.addEventListener('resize', resizeStars);
     resizeStars();
-
-    // 220 soft-moving stars
+    // 220 estrellas suaves
     const stars = Array.from({ length: 220 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
@@ -116,7 +67,6 @@
       alpha: Math.random() * 0.7 + 0.3,
       twinkle: Math.random() * Math.PI * 2
     }));
-
     function animateStars() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       stars.forEach((star, i) => {
