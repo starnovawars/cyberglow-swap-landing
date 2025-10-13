@@ -18,7 +18,6 @@
           <img src="cyberglow-logo.png" alt="Cyberglow Logo" />
           <span>Cyberglow</span>
         </div>
-        <!-- Puedes agregar un menú aquí si lo necesitas -->
       </div>
     </header>
 
@@ -35,8 +34,8 @@
           We are building a next-generation decentralized exchange and DeFi suite for IOTA EVM.<br>
           <span class="muted">This is a vision in progress. Join us on our journey!</span>
         </p>
-        <!-- Puedes mantener el botón pero con texto de construcción -->
-        <a href="#" class="launch-btn disabled" tabindex="-1">Coming Soon</a>
+        <!-- Launch button now links to the dev platform -->
+        <a href="https://v0-cyberglow-platform-development.vercel.app/" class="launch-btn" target="_blank">🚀 Launch App</a>
       </div>
     </section>
 
@@ -86,17 +85,6 @@
     </section>
 
     <footer>
-      <div class="footer-links">
-        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/README.md" target="_blank">📄 Documentation</a>
-        <span>•</span>
-        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/AUDIT.md" target="_blank">🛡️ Audit Report</a>
-        <span>•</span>
-        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/docs/USER_GUIDE.md" target="_blank">👤 User Guide</a>
-        <span>•</span>
-        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/docs/DEVELOPER_GUIDE.md" target="_blank">💻 Developer Guide</a>
-        <span>•</span>
-        <a href="https://github.com/starnovawars/cyberglow-swap-v2/blob/main/docs/CONTRACT_SPECS.md" target="_blank">⚙️ Contract Specs</a>
-      </div>
       <div class="socials">
         <a href="https://x.com/Cyberglowswap" target="_blank"><i class="fab fa-x-twitter"></i></a>
         <a href="https://t.me/cyberglowswap" target="_blank"><i class="fab fa-telegram"></i></a>
@@ -132,7 +120,6 @@
     function animateStars() {
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       stars.forEach((star, i) => {
-        // Twinkle effect
         const twinkle = 0.3 + 0.7 * Math.abs(Math.sin(star.twinkle + Date.now() * 0.0007 + i));
         ctx.globalAlpha = star.alpha * twinkle;
         ctx.beginPath();
