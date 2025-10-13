@@ -1,405 +1,108 @@
-/* RESET & BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cyberglow Swap | IOTA EVM DEX</title>
+  <!-- Fonts & Font Awesome -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+  <canvas id="stars"></canvas>
+  <div class="container">
+    <!-- HERO -->
+    <header class="hero">
+      <div class="logo-container">
+        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
+        <div class="halo"></div>
+      </div>
+      <h1>Cyberglow Swap</h1>
+      <p class="subtitle">The Next-Generation DEX on IOTA EVM</p>
+      <a href="https://v0-cyberglow-platform-development.vercel.app/" target="_blank" class="launch-btn">🚀 Launch App</a>
+      <div class="hero-badges">
+        <span class="badge"><i class="fa-solid fa-lock"></i> Non-custodial</span>
+        <span class="badge"><i class="fa-solid fa-bolt"></i> Instant Swaps</span>
+        <span class="badge"><i class="fa-brands fa-ethereum"></i> IOTA EVM</span>
+      </div>
+    </header>
 
-body {
-  background-color: #050018;
-  color: #e0f7ff;
-  font-family: 'Poppins', sans-serif;
-  overflow-x: hidden;
-}
+    <!-- HOW IT WORKS / PREVIEW -->
+    <section class="how-works">
+      <h2>How Cyberglow Works</h2>
+      <div class="how-content">
+        <div class="how-text">
+          <ul>
+            <li><i class="fa-solid fa-right-left"></i> Swap any IOTA EVM token instantly</li>
+            <li><i class="fa-solid fa-coins"></i> Provide liquidity and earn rewards</li>
+            <li><i class="fa-solid fa-vault"></i> Stake and unlock yield opportunities</li>
+            <li><i class="fa-solid fa-users"></i> Decentralized, governed by the community</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-canvas#stars {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
-}
+    <!-- FEATURES -->
+    <section class="features">
+      <h2>Why Choose Cyberglow?</h2>
+      <div class="features-cards">
+        <div class="feature-card">
+          <i class="fa-solid fa-network-wired"></i>
+          <h3>Deep Liquidity</h3>
+          <p>Robust pools for seamless swaps and low slippage.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-shield-halved"></i>
+          <h3>Secure & Audited</h3>
+          <p>Built on IOTA EVM, with audited smart contracts.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-leaf"></i>
+          <h3>Eco Friendly</h3>
+          <p>Leverages IOTA’s scalable, energy-efficient protocol.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h3>Yield & Rewards</h3>
+          <p>Earn with staking, farming, and governance participation.</p>
+        </div>
+      </div>
+    </section>
 
-/* CONTAINER */
-.container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  min-height: 100vh;
-  justify-content: center;
-  padding: 20px;
-}
+    <!-- CYBERGLOW FUNCTIONALITIES -->
+    <section class="cyberglow-functionalities">
+      <h2>Platform Functionalities</h2>
+      <div class="functionalities-grid">
+        <div class="function-card"><i class="fa-solid fa-right-left"></i> <span>Swap</span></div>
+        <div class="function-card"><i class="fa-solid fa-hand-holding-dollar"></i> <span>Lending</span></div>
+        <div class="function-card"><i class="fa-solid fa-water"></i> <span>Liquid Staking</span></div>
+        <div class="function-card"><i class="fa-solid fa-retweet"></i> <span>Restaking</span></div>
+        <div class="function-card"><i class="fa-solid fa-people-group"></i> <span>DAO Studio</span></div>
+        <div class="function-card"><i class="fa-solid fa-seedling"></i> <span>Crowdfunding + Oracles</span></div>
+        <div class="function-card"><i class="fa-solid fa-circle-question"></i> <span>Prediction Market</span></div>
+        <div class="function-card"><i class="fa-solid fa-building-columns"></i> <span>RWA Tokenization</span></div>
+        <div class="function-card"><i class="fa-solid fa-boxes-stacked"></i> <span>Asset Tokenization WWI</span></div>
+        <div class="function-card"><i class="fa-solid fa-clone"></i> <span>EBST Twin</span></div>
+        <div class="function-card"><i class="fa-solid fa-rocket"></i> <span>Launchpad</span></div>
+        <div class="function-card"><i class="fa-solid fa-book-open"></i> <span>Lore Engine</span></div>
+        <div class="function-card"><i class="fa-solid fa-gem"></i> <span>Utility NFTs</span></div>
+        <div class="function-card"><i class="fa-solid fa-dice"></i> <span>Web3 Casino</span></div>
+        <div class="function-card"><i class="fa-solid fa-gamepad"></i> <span>Mini Games Web3</span></div>
+        <div class="function-card"><i class="fa-solid fa-magnifying-glass-chart"></i> <span>Tracker dApp</span></div>
+        <div class="function-card"><i class="fa-solid fa-chart-pie"></i> <span>DeFi Dashboard</span></div>
+        <div class="function-card"><i class="fa-solid fa-compass"></i> <span>Cyberglow Explorer</span></div>
+        <div class="function-card"><i class="fa-solid fa-wallet"></i> <span>Cyberglow Wallet</span></div>
+      </div>
+    </section>
 
-/* HERO */
-.hero {
-  position: relative;
-  margin-top: 40px;
-}
+    <!-- ABOUT / VISION -->
+    <section class="about">
+      <h2>Our Vision</h2>
+      <p>
+        At Cyberglow, our mission is to redefine DeFi on IOTA EVM by providing a secure, fast, and fully decentralized environment for token swaps, liquidity provision, and yield generation. Join us and be part of the financial revolution.
+      </p>
+    </section>
 
-.logo-container {
-  position: relative;
-  display: inline-block;
-  margin-bottom: 20px;
-}
+    <!-- FOOTER -->
 
-.logo {
-  width: 180px;
-  height: auto;
-  z-index: 2;
-  animation: pulse 3s infinite;
-  filter: drop-shadow(0 0 25px #00d8ff)
-          drop-shadow(0 0 40px #7b2fff);
-}
-
-.halo {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  transform: translate(-50%, -50%);
-  background: conic-gradient(
-    from 0deg,
-    rgba(0,216,255,0.15),
-    rgba(123,47,255,0.25),
-    rgba(0,216,255,0.15)
-  );
-  filter: blur(30px);
-  animation: rotateHalo 10s linear infinite;
-  z-index: 1;
-}
-
-@keyframes rotateHalo {
-  from { transform: translate(-50%, -50%) rotate(0deg); }
-  to { transform: translate(-50%, -50%) rotate(360deg); }
-}
-
-@keyframes pulse {
-  0%, 100% { filter: drop-shadow(0 0 25px #00d8ff) drop-shadow(0 0 40px #7b2fff); }
-  50% { filter: drop-shadow(0 0 50px #7b2fff) drop-shadow(0 0 60px #00d8ff); }
-}
-
-h1 {
-  font-family: 'Orbitron', sans-serif;
-  font-size: 2.5rem;
-  color: #00d8ff;
-  text-shadow: 0 0 25px #00d8ff;
-}
-
-.subtitle {
-  margin-top: 10px;
-  font-size: 1.1rem;
-  color: #c9eaff;
-}
-
-.launch-btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 12px 28px;
-  background: linear-gradient(90deg, #00d8ff, #7b2fff);
-  color: #000;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 10px;
-  box-shadow: 0 0 20px #00d8ff;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.launch-btn:hover {
-  transform: scale(1.05);
-  box-shadow: 0 0 35px #7b2fff;
-}
-
-/* HERO BADGES */
-.hero-badges {
-  margin-top: 18px;
-  display: flex;
-  gap: 16px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.badge {
-  background: #1a1835;
-  border: 1.5px solid #00d8ff;
-  color: #00d8ff;
-  padding: 7px 18px;
-  border-radius: 17px;
-  font-size: 1em;
-  font-family: 'Poppins', sans-serif;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-weight: 600;
-  box-shadow: 0 0 18px #00d8ff33;
-}
-
-/* HOW IT WORKS */
-.how-works {
-  margin-top: 50px;
-  margin-bottom: 55px;
-}
-.how-works h2 {
-  color: #7b2fff;
-  font-family: 'Orbitron', sans-serif;
-  font-size: 1.6rem;
-  margin-bottom: 25px;
-}
-.how-content {
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 32px;
-  flex-wrap: wrap;
-}
-.how-text ul {
-  color: #d9f4ff;
-  font-size: 1.1rem;
-  list-style: none;
-  padding: 0;
-}
-.how-text li {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 1.08em;
-}
-.how-img img {
-  width: 270px;
-  border-radius: 16px;
-  box-shadow: 0 0 28px #7b2fff55;
-}
-
-/* FEATURES */
-.features {
-  margin-top: 24px;
-  margin-bottom: 48px;
-}
-.features h2 {
-  font-family: 'Orbitron', sans-serif;
-  color: #00d8ff;
-  margin-bottom: 26px;
-  font-size: 1.5em;
-}
-.features-cards {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 28px;
-  justify-content: center;
-}
-.feature-card {
-  background: #18142f;
-  border-radius: 18px;
-  box-shadow: 0 4px 32px #00d8ff28;
-  padding: 29px 24px 22px 24px;
-  width: 230px;
-  text-align: center;
-  transition: transform 0.2s, box-shadow 0.2s;
-}
-.feature-card:hover {
-  transform: translateY(-8px) scale(1.04);
-  box-shadow: 0 8px 36px #7b2fff55;
-}
-.feature-card i {
-  font-size: 2em;
-  color: #7b2fff;
-  margin-bottom: 13px;
-}
-.feature-card h3 {
-  color: #00d8ff;
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 1.1em;
-}
-.feature-card p {
-  color: #e0f7ff;
-  font-size: 1em;
-}
-
-/* FUNCTIONALITIES SECTION */
-.cyberglow-functionalities {
-  margin: 0 auto 48px auto;
-  padding-top: 24px;
-  padding-bottom: 24px;
-  width: 100%;
-  max-width: 1200px;
-}
-.cyberglow-functionalities h2 {
-  font-family: 'Orbitron', sans-serif;
-  color: #7b2fff;
-  margin-bottom: 22px;
-  font-size: 1.35em;
-}
-.functionalities-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 18px;
-  width: 100%;
-  margin: 0 auto;
-}
-.function-card {
-  background: #151030;
-  border-radius: 14px;
-  padding: 22px 10px 17px 10px;
-  box-shadow: 0 2px 24px #00d8ff18;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 13px;
-  font-size: 1.09em;
-  color: #e0f7ff;
-  font-weight: 600;
-  transition: transform 0.16s, box-shadow 0.16s;
-  border: 1.5px solid #242055;
-}
-.function-card i {
-  font-size: 1.7em;
-  color: #00d8ff;
-}
-.function-card span {
-  margin-top: 3px;
-}
-.function-card:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 4px 30px #7b2fff44;
-  border-color: #00d8ff;
-  color: #00d8ff;
-}
-
-/* ABOUT */
-.about {
-  max-width: 840px;
-  margin: 0 auto 48px auto;
-  text-align: center;
-}
-.about h2 {
-  color: #7b2fff;
-  font-family: 'Orbitron', sans-serif;
-  margin-bottom: 14px;
-  font-size: 1.3em;
-}
-.about p {
-  color: #d9f4ff;
-  font-size: 1.12em;
-  line-height: 1.6;
-}
-
-/* FOOTER */
-footer {
-  margin-top: 40px;
-  text-align: center;
-  color: #aaa;
-  font-size: 0.9rem;
-}
-
-.socials {
-  margin-bottom: 15px;
-}
-
-.socials a {
-  color: #00d8ff;
-  font-size: 1.5rem;
-  margin: 0 10px;
-  transition: color 0.3s, transform 0.3s;
-}
-
-.socials a:hover {
-  color: #7b2fff;
-  transform: scale(1.2);
-}
-
-.footer-links {
-  margin-bottom: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-}
-.footer-links a {
-  color: #00d8ff;
-  background: #1a1835;
-  padding: 7px 14px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: 600;
-  font-size: 1em;
-  box-shadow: 0 0 8px #00d8ff33;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  display: inline-block;
-}
-.footer-links a:hover {
-  background: #7b2fff;
-  color: #fff;
-  transform: translateY(-3px) scale(1.05);
-}
-.footer-links span {
-  color: #888;
-  font-weight: bold;
-  font-size: 1.3em;
-  margin: 0 6px;
-}
-
-/* Responsive */
-@media (max-width: 1100px) {
-  .functionalities-grid {
-    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  }
-}
-@media (max-width: 900px) {
-  .how-content {
-    flex-direction: column;
-    align-items: center;
-  }
-  .features-cards {
-    flex-direction: column;
-    align-items: center;
-    gap: 18px;
-  }
-  .functionalities-grid {
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
-    gap: 13px;
-  }
-}
-@media (max-width: 768px) {
-  .logo {
-    width: 150px;
-  }
-  .halo {
-    width: 200px;
-    height: 200px;
-    filter: blur(25px);
-  }
-  .hero {
-    margin-top: 10px;
-  }
-  h1 {
-    font-size: 1.9rem;
-  }
-  .cyberglow-functionalities {
-    padding-top: 10px;
-    padding-bottom: 10px;
-  }
-  .functionalities-grid {
-    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-    gap: 10px;
-  }
-}
-
-@media (max-width: 520px) {
-  .logo {
-    width: 110px;
-  }
-  .halo {
-    width: 110px;
-    height: 110px;
-    filter: blur(17px);
-  }
-  h1 {
-    font-size: 1.2rem;
-  }
-  .cyberglow-functionalities h2 {
-    font-size: 1em;
-  }
-}
