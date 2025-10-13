@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cyberglow Swap | IOTA EVM DEX</title>
-  <!-- Fonts & Font Awesome -->
+  <title>Cyberglow Swap | DeFi Platform on IOTA EVM</title>
   <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="index.css" />
@@ -12,30 +11,52 @@
 <body>
   <canvas id="stars"></canvas>
   <div class="container">
-    <!-- LOGO GRANDE -->
-    <header class="hero">
-      <div class="logo-container">
-        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo" />
-        <div class="halo"></div>
+    <!-- LOGO GRANDE Y HEADER -->
+    <header class="main-header">
+      <div class="logo-center">
+        <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo-main" />
       </div>
-      <h1>Cyberglow Swap</h1>
-      <p class="subtitle">The Next-Generation DEX on IOTA EVM</p>
-      <!-- Botón lanzador, activo -->
-      <a href="https://v0-cyberglow-platform-development.vercel.app/" target="_blank" class="launch-btn">🚀 Launch App</a>
     </header>
 
-    <!-- AVISO DE CONSTRUCCIÓN -->
-    <section class="construction">
-      <p class="construction-msg">
-        <strong>🚧 Platform in Construction</strong><br>
-        We're building the future of DeFi on IOTA EVM.<br>
-        This is a vision in progress. Join us on our journey!
+    <!-- HERO Y MENSAJE -->
+    <section class="hero">
+      <div class="hero-badge">
+        <i class="fa-solid fa-bolt"></i> Next Generation DEX on IOTA EVM
+      </div>
+      <h1>
+        Trade, Earn<br>
+        and Boost<br>
+        with the Power of<br>
+        <span class="glow-title">Cyberglow Swap</span>
+      </h1>
+      <p class="construction-message">
+        <strong>🚧 We're building the future of DeFi on IOTA EVM!</strong><br>
+        The Cyberglow team is working to bring you a full decentralized finance suite including:
       </p>
+      <ul class="features-list">
+        <li>Swap</li>
+        <li>Lending</li>
+        <li>Liquid Staking</li>
+        <li>Restaking</li>
+        <li>DAO Studio</li>
+        <li>Crowdfunding + Oracles</li>
+        <li>Prediction Market</li>
+        <li>RWA Tokenization</li>
+        <li>Asset Tokenization WWI</li>
+        <li>EBST Twin</li>
+        <li>Launchpad</li>
+        <li>Lore Engine</li>
+        <li>Utility NFTs</li>
+        <li>Web3 Casino</li>
+        <li>Mini Games Web3</li>
+        <li>Tracker dApp</li>
+        <li>DeFi Dashboard</li>
+        <li>Cyberglow Explorer</li>
+        <li>Cyberglow Wallet</li>
+      </ul>
+      <a href="https://v0-cyberglow-platform-development.vercel.app/" class="launch-btn" target="_blank">🚀 Launch App</a>
     </section>
 
-    <!-- (Puedes mantener funcionalidades, features, etc. aquí si quieres) -->
-
-    <!-- FOOTER SOLO REDES SOCIALES -->
     <footer>
       <div class="socials">
         <a href="https://x.com/Cyberglowswap" target="_blank"><i class="fab fa-x-twitter"></i></a>
@@ -48,7 +69,7 @@
     </footer>
   </div>
 
-  <!-- Fondo de estrellas animadas -->
+  <!-- Estrellas animadas -->
   <script>
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
@@ -58,7 +79,7 @@
     }
     window.addEventListener('resize', resizeStars);
     resizeStars();
-    // 220 estrellas suaves
+    // 220 estrellas suaves, cósmicas
     const stars = Array.from({ length: 220 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
