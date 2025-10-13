@@ -34,13 +34,13 @@ canvas#stars {
   margin-bottom: 1.2rem;
 }
 .logo-main {
-  width: 150px;
+  width: 180px;
   max-width: 80vw;
   height: auto;
   filter: drop-shadow(0 0 30px #00eaff88) drop-shadow(0 0 40px #7b2fff44);
 }
 @media (min-width: 600px) {
-  .logo-main { width: 220px; }
+  .logo-main { width: 240px; }
 }
 
 /* HERO SECTION */
@@ -162,7 +162,7 @@ footer {
 
 /* RESPONSIVE */
 @media (max-width: 500px) {
-  .logo-main { width: 95px; }
+  .logo-main { width: 110px; }
   .features-list { padding: 0.7em 0.7em; }
   .hero h1 { font-size: 1.25rem; }
 }
