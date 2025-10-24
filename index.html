@@ -11,14 +11,12 @@
 <body>
   <canvas id="stars"></canvas>
   <div class="container">
-    <!-- LOGO GRANDE Y HEADER -->
     <header class="main-header">
       <div class="logo-center">
         <img src="cyberglow-logo.png" alt="Cyberglow Logo" class="logo-main" />
       </div>
     </header>
 
-    <!-- HERO Y MENSAJE -->
     <section class="hero">
       <div class="hero-badge">
         <i class="fa-solid fa-bolt"></i> Next Generation DEX on IOTA EVM
@@ -54,7 +52,7 @@
         <li>Cyberglow Explorer</li>
         <li>Cyberglow Wallet</li>
       </ul>
-      <a href="https://v0-cyberglow-platform-development.vercel.app/" class="launch-btn" target="_blank">🚀 Launch App</a>
+      <a href="https://v0-cyberglow-multi-d-app-infrastruc.vercel.app/" class="launch-btn" target="_blank">🚀 Launch App</a>
     </section>
 
     <footer>
@@ -69,7 +67,6 @@
     </footer>
   </div>
 
-  <!-- Estrellas animadas -->
   <script>
     const canvas = document.getElementById('stars');
     const ctx = canvas.getContext('2d');
@@ -79,7 +76,6 @@
     }
     window.addEventListener('resize', resizeStars);
     resizeStars();
-    // 220 estrellas suaves, cósmicas
     const stars = Array.from({ length: 220 }, () => ({
       x: Math.random() * canvas.width,
       y: Math.random() * canvas.height,
